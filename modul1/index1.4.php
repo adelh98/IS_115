@@ -14,8 +14,8 @@
 <body>
     <?php
         //Lager variablene
-        $tall1 = 250;
-        $tall2 = 500;
+        $tall1 = -500;
+        $tall2 = -250;
 
         //Lager "logikken" for de ulike svarene:
         $sum = $tall1 + $tall2;
@@ -26,7 +26,7 @@
               $diff = "negativt";
             }
 
-        $gjenn = $tall1 + $tall2 / 2; //Det samme gjelder her.
+        $gjenn = $tall1 + $tall2 / 2;
 
         //Printer ut resultatene i en setning ved hjelp av "Echo" og litt HTML "pynt":
         echo 
