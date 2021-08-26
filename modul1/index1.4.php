@@ -12,21 +12,24 @@
 </head>
 
 <body>
+<form method="post" action="#">
+  <h3>Tast inn tallene du ønsker å sjekke:</h3>
+    <label for="tall1">Tall 1:</label><br>
+    <input type="number" id="tall1" name="tall1"><br>
+    <label for="tall2">Tall 2:</label><br>
+    <input type="number" id="tall2" name="tall2"><br><br>
+    <input type="submit" value="Submit">
+</form>
+
     <?php
-        //Lager variablene
-        $tall1 = -500;
-        $tall2 = -250;
+        //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
+        $tall1 = $_POST['tall1'];
+        $tall2 = $_POST['tall2'];
 
         //Lager "logikken" for de ulike svarene:
-        $sum = $tall1 + $tall2;
-        $diff = $tall1 - $tall2; //Det skal sies at dersom dette hadde vært dynamisk og ikke statisk måtte jeg ha gjort en litt grunidgere løsning...
-            if($diff > 0) {
-              $diff = $tall1 - $tall2;
-            } elseif($diff < 0) {
-              $diff = "negativt";
-            }
-
-        $gjenn = $tall1 + $tall2 / 2;
+        $sum = $tall1 + $tall2; //Legger sammen tallene
+        $diff = abs($tall1 - $tall2); //Subtraherer tallene og tar hensyn til potensielle negative verdier ved hjelp av abs() funksjon.
+        $gjenn = $tall1 + $tall2 / 2; //Regner ut gjennomsnitt
 
         //Printer ut resultatene i en setning ved hjelp av "Echo" og litt HTML "pynt":
         echo 
