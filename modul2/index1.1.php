@@ -30,7 +30,7 @@
         //Lager "logikken" for de ulike svarene:
         $Etternavn = ucfirst(strtolower($Etternavn));  //Her sørger jeg for at første bokstav blir gjort om til stor bokstav, og resten blir små uavhengig av CAPS lock eller ikke.
 
-        $Lengde = strlen($Etternavn); //Her lager jeg en variabel som teller antall bokstaver i det fullenavnet
+        $Lengde = strlen($Etternavn); //Her lager jeg en variabel som teller antall bokstaver og så bruker jeg det i echoen til slutt.
 
         //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell. Kunne ha gjort at det lagret seg ved legge det inn i en datastruktur
         //Men følte ikke det var nødvendig.
