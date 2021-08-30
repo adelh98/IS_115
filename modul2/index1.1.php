@@ -37,7 +37,7 @@
         $Fulltnavn = $Fornavn.$Etternavn; //Her legger jeg sammen Fornavn og Etternavn og gjør det om til 1 string som jeg senere bruker for å telle antall bokstaver
         $Lengde = strlen($Fulltnavn); //Her lager jeg en variabel som teller antall bokstaver i det fullenavnet
 
-        //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell" Kunne ha gjort at det lagret seg ved legge det inn i en datastruktur
+        //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell. Kunne ha gjort at det lagret seg ved legge det inn i en datastruktur
         //Men følte ikke det var nødvendig.
         echo "<h3>Output:</h3>";
         echo 
