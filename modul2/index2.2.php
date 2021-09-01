@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Oppgave 1</title>
+  <title>Oppgave 2</title>
   <meta name="description" content="Oppgave 4">
-  <h1>Oppgave 1</h1>
+  <h1>Oppgave 2</h1>
 </head>
 <style>
     table, td {
@@ -21,29 +21,26 @@
   <h3>Tast inn etternavn:</h3>
     <label for="Etternavn">Etternavn:</label><br>
     <input type="text" id="Etternavn" name="Etternavn"><br><br>
-    <input type="submit" value="Legg til">
+    <input type="submit" value="Legg Til">
 </form>
     <?php
         //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
         $Etternavn = $_POST['Etternavn'];
 
-        //Lager "logikken" for de ulike svarene:
-        $Etternavn = ucfirst(strtolower($Etternavn));  //Her sørger jeg for at første bokstav blir gjort om til stor bokstav, og resten blir små uavhengig av CAPS lock eller ikke.
+        $Stripped = strip_tags($Etternavn); //Her stripper jeg for mulig HTML syntax og legger det inn i ny variabel.
 
-        $Lengde = strlen($Etternavn); //Her lager jeg en variabel som teller antall bokstaver og så bruker jeg det i echoen til slutt.
+        $Etternavn = ucfirst(strtolower($Stripped));
+        //Bruker $Stripped variabel for så å re-definere $Etternavn med den nye versjonen.
 
-        //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell. Kunne ha gjort at det lagret seg ved legge det inn i en datastruktur
-        //Men følte ikke det var nødvendig.
+        //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell.
         echo "<h3>Output:</h3>";
         echo 
             "<table>
                 <tr>
                     <td><b>Etternavn</b></td>
-                    <td><b>Lengde (Bokstaver)</b></td>
                 </tr>
                 <tr>
-                    <td>$Etternavn</td>
-                    <td>$Lengde</td>
+                    <td>$Etternavn</t>
                 </tr>
             </table>";
         
