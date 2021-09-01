@@ -9,13 +9,6 @@
   <meta name="description" content="Oppgave 4">
   <h1>Oppgave 3</h1>
 </head>
-<style>
-    table, td {
-        border: 1px solid black;
-        position: relative;
-        margin-left: 25px; 
-    }
-</style>
 <body>
 <form method="post" action="#">
     <?php
@@ -24,7 +17,7 @@
 
         echo "<h3>$myString</h3>"; //Printer setningen
 
-        //Lager variabel for det ordet som skal brukes.
+        //Lager variabel for det ordet som skal finnes i settningen $myString.
         $word = "is";
 
         //Kaller funksjonen som teller antall ganger ordet "is" går i settningen.
