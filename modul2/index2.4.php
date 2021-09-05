@@ -15,13 +15,17 @@
         //Variabel for fødseldatoen
         $dateOfBirth = new DateTime('29.7.1998'); // Min egen fødseldato.
         //Henter system datoen ved hjelp av funksjonen "Datetime"
+        $thisDayOfBirth = new DateTime('29.7.2021'); //Fødselsdagen min i år
+
         $today = new Datetime(date('m.d.y'));
         /* Lager logikken for differanse utreg. Bruker også "->" object operatoren som kaller en metode på en instanse og "diff" funksjonen som returnerer
-        /* differeansen mellom to "Datetime" objekter. Disse er $dateOfBirth og $today ^
+        /* differeansen mellom to "Datetime" objekter. Disse er $dateOfBirth, $thisDateOfBirth og $today ^
         */
-        $diff = $today->diff($dateOfBirth);
-        printf(' Alderen er : %d år og %d dager', $diff->y, $diff->m, $diff->d);
-        printf("\n");
+        $diffYear = $dateOfBirth->diff($thisDayOfBirth); //Differansen mellom fødselsdagen og fødselsdagen i år, antall år.
+        $diffDays = $thisDayOfBirth->diff($today)->format("%a"); // Differansen mellom system dato(i dag) og fødselsdag i år, antall dager.
+
+        printf('Din alder er : %d år og %d dager', $diffYear->y, $diffDays);
+
 
     ?>
 </body>
