@@ -24,7 +24,7 @@
         $amount = substr_count($myString, $word);
 
         //Printer fullstendig svar i en settning.
-        echo "Ordet ''$word'' dukker opp $amount ganger i settningen ''$myString''";
+        echo "Ordet ''<b>$word</b>'' dukker opp <b>$amount</b> ganger i settningen ''<b>$myString</b>''";
     ?>
 </body>
 </html>

@@ -24,7 +24,7 @@
     //Henter en tilfeldig symboler fra array listen
     foreach ($passordSets as $passordSet) { //Lager en foreach løkke som går gjennom hvert element i listen $passordSets
         $passord .= $passordSet[array_rand(str_split($passordSet))]; //Bruker funksjonen "array_rand" som velger tilfedlige symboler fra listen
-        //Og jeg bruker funksjonen "str_split" som en string til en array.
+        //Og jeg bruker funksjonen "str_split" som gjør en string til en array.
     }   
 
     // Sjekker at lengden er riktig
