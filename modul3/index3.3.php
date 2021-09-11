@@ -25,11 +25,11 @@
 
                 //Printer ut resultatene i en setning ved hjelp av "Echo" og litt HTML "pynt":
                 echo 
-                "<h3>
+                "<h4>
                 Summen av $tall1 og $tall2 = $sum. <br> 
                 Differansen mellom $tall1 og $tall2 = $diff<br>
                 Og gjennomsnittet for $tall1 og $tall2 = $gjenn
-                </h3>";
+                </h4>";
         }
         
     ?>
