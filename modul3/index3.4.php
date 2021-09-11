@@ -15,7 +15,7 @@
     <label for="Kommune">Kommune:</label><br>
     <input type="text" id="Kommune" name="Kommune"><br><br>
 
-    <input type="submit" value="Sjekk myndighet">
+    <input type="submit" value="Finn fylke">
 </form>
     <?php
         //Henter variabler fra bruker Input.
@@ -29,36 +29,37 @@
         //Lager en "Switch" for å sjekke hvilket fylke som skal printes til hvilken kommune:
         switch ($Kommune) {
             case "Kristiansand":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
             break;
             case "Lillesand":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
             break;
             case "Birkenes":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
             break;
             case "Harstad":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b>fylke";
             break;
             case "Kvæfjord":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
             break;
             case "Tromsø":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
             break;
             case "Bergen":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Vestland</b> fylke";
             break;
             case "Trondheim":
-                echo "$Kommune ligger i Agder fylke";
+                echo "<br><b>$Kommune</b> ligger i <b>Trøndelag</b> fylke";
             break;
-            case "Lillesand":
-                echo "$Kommune ligger i Agder fylke";
+            case "Bodø":
+                echo "<br><b>$Kommune</b> ligger i <b>Nordland</b> fylke";
             break;
-            case "Lillesand":
-                echo "$Kommune ligger i Agder fylke";
+            case "Alta":
+                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
             break;
-            
+            default:
+                echo "<br>Kommunen '<b>$Kommune</b>' er enda ikke registrert i systemet. Prøv igjen om 3-5 år :)";
         }
 
     ?>
