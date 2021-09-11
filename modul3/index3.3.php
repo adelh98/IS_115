@@ -31,7 +31,6 @@
                 Og gjennomsnittet for $tall1 og $tall2 = $gjenn
                 </h4>";
         }
-        
     ?>
 </body>
 </html>
