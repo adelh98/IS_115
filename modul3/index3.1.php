@@ -24,7 +24,7 @@
         $Alder = $_POST['Alder'];
         
         //Sjekker om $Alder er STØRRE enn 18, hvis den er det så kjøres første Echo, hvis ikke kjøres andre.
-        if($Alder > 18) {
+        if($Alder >= 18) {
             echo "<br><h3>$Navn er $Alder år og er dermed myndig!</h3>";
         } else {
             echo "<br><h3>$Navn er $Alder år og er dermed ikke myndig!</h3>";

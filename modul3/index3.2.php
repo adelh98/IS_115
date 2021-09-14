@@ -13,14 +13,11 @@
     <?php
       //Lager variabler som skal brukes
       $start = 0; //Definerer start punktet, som er 0
-      $stop = 10; //Definerer slutt punktet for når telleren skal slutte å telle. Det vil si, den teller til start har kommet til 10.
+      $stop = 9; //Definerer slutt punktet for når telleren skal slutte å telle. Det vil si, den teller til start har kommet til 9.
 
       $sum = 0; //Summen er der jeg skal lagre summen av telleren senre i For løkken.
 
-      //Lager en for løkke, $i er indexen som brukes til å telle. Den initaliseres til å være 0 og stopper når den har blitt 10.
-      //I og med at jeg har sagt at "$start = 0" så vil den da stoppe etter 10 tellinger, men siden den begynner på 0, så er blir siste tallet 9. (0 + 10 = 9)
-
-      for ($i = $start; $i < $stop; $i++) {
+      for ($i = $start; $i <= $stop; $i++) { //For løkke som bruker Start/Stop variablene for å definere start punkt og stop punkt.
         echo "<br>Telleren er nå $i"; //Printer hver gang telleren inkrementeres
         $sum += $i; //Lagrer telleren i $sum som jeg senere bruker
       }
