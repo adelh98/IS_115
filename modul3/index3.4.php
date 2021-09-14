@@ -27,41 +27,22 @@
         $Kommune = $i; //Re-definerer $Kommune med den nye behandlede Stringen fra $i
 
         //Lager en "Switch" for å sjekke hvilket fylke som skal printes til hvilken kommune:
-        switch ($Kommune) {
-            case "Kristiansand":
-                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
-            break;
-            case "Lillesand":
-                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
-            break;
-            case "Birkenes":
-                echo "<br><b>$Kommune</b> ligger i <b>Agder</b> fylke";
-            break;
-            case "Harstad":
-                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b>fylke";
-            break;
-            case "Kvæfjord":
-                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
-            break;
-            case "Tromsø":
-                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
-            break;
-            case "Bergen":
-                echo "<br><b>$Kommune</b> ligger i <b>Vestland</b> fylke";
-            break;
-            case "Trondheim":
-                echo "<br><b>$Kommune</b> ligger i <b>Trøndelag</b> fylke";
-            break;
-            case "Bodø":
-                echo "<br><b>$Kommune</b> ligger i <b>Nordland</b> fylke";
-            break;
-            case "Alta":
-                echo "<br><b>$Kommune</b> ligger i <b>Troms og Finnmark</b> fylke";
-            break;
-            default:
-                echo "<br>Kommunen '<b>$Kommune</b>' er enda ikke registrert i systemet. Prøv igjen om 3-5 år :)";
-        }
-        echo 'php version:' . phpversion();
+            $result = match($Kommune) {
+    
+                "Kristiansand", "Lillesand", "Birkenes", "Bjerkreim" => "Agder",
+            
+                "Harstad", "Kvæfjord", "Tromsø", "Alta" => "Troms og Finnmark",
+            
+                "Bergen"  => "Vestland",
+            
+                "Trondheim", => "Trøndelag",
+            
+                "Bodø", => "Nordland",
+            
+                default => "Finner ikke kommune i registeret",
+            };
+            
+            echo "$Kommune ligger i $result fylke";
 
     ?>
 </body>
