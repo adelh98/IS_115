@@ -30,13 +30,21 @@
            //(int) caster til int fra String, på den måten vil return valuen få INT datatype istedet for string. Hjelper for senere utregninger.
           $antallHundre = (((int)($formatedNumber[3] / 100) ?: '')); //Lager en variabel for bedre leselig kode senere
 
-          /*Her lager jeg logikken outputen for setningen. formatedNumber er gjort om til en array med 0, 1, 2 og 3 som index for hver grupering.
+          /*Her lager jeg logikken outputen for setningen. formatedNumber er gjort om til en array med 0, 1, 2 og 3 osv som index for hver grupering.
           * Henter da hver index, og legger til en string på enden, samtidig som jeg fletter dem sammen i en hel setning.
           * For Hundre og Ener kategorien kreves det en egen innebygd logikk for å regne om. Da har jeg laget $antallHundre og brukt modulo operatoren.
           */
-          $nummer = $formatedNumber[0] . ' Milliard(er), ' . 
-                    (int)$formatedNumber[1] . ' Million(er), ' .  //Før "?" = condition, etter "?" = true, etter ":" = else
-                    $formatedNumber[2] . ' Tusen, ' . (($antallHundre != '' ? $antallHundre . ' Hundre, ' : '') . " og " . (int)($formatedNumber[3] % 100));
+          $nummer = "";
+          if( count($formatedNumber) >= 6 ){
+            $nummer .= (int)$formatedNumber[count($formatedNumber)-6] . ' Billiard(er), ';
+          }
+          if( count($formatedNumber) >= 5 ){
+            $nummer .= (int)$formatedNumber[count($formatedNumber)-5] . ' Billion(er), ';
+          }
+          $nummer .= (int)$formatedNumber[count($formatedNumber)-4] . ' Milliard(er), ';
+          $nummer .= (int)$formatedNumber[count($formatedNumber)-3] . ' Million(er), ';  //Før "?" = condition, etter "?" = true, etter ":" = else
+          $nummer .= (int)$formatedNumber[count($formatedNumber)-2] . ' Tusen, ' . (($antallHundre != '' ? $antallHundre . ' Hundre, ' : ''));
+          $nummer .= " og " . (int)($formatedNumber[count($formatedNumber)-1] % 100);
         }
         return $nummer;
       }

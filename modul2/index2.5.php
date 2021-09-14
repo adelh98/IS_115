@@ -26,7 +26,6 @@
         $passord .= $passordSet[array_rand(str_split($passordSet))]; //Bruker funksjonen "array_rand" som velger tilfedlige symboler fra listen
         //Og jeg bruker funksjonen "str_split" som gjør en string til en array.
     }   
-
     // Sjekker at lengden er riktig
     while (strlen($passord) < $lengde) {
         $randomSet = $passordSets[array_rand($passordSets)];
