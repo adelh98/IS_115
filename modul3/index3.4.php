@@ -61,6 +61,7 @@
             default:
                 echo "<br>Kommunen '<b>$Kommune</b>' er enda ikke registrert i systemet. Prøv igjen om 3-5 år :)";
         }
+        echo 'php version:' . phpversion();
 
     ?>
 </body>
