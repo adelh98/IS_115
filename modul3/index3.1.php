@@ -16,12 +16,13 @@
     <input type="text" id="Navn" name="Navn"><br><br>
     <label for="Alder">Alder:</label><br>
     <input type="number" id="Alder" name="Alder"><br><br>
-    <input type="submit" value="Sjekk myndighet">
+    <input type="submit" name="submit" value="Sjekk myndighet">
 </form>
     <?php
         //Henter variabler fra bruker Input.
-        $Navn = $_POST['Navn'];
-        $Alder = $_POST['Alder'];
+        if(isset($_REQUEST['submit'])) {
+            $Navn = $_REQUEST['Navn'];
+            $Alder = $_REQUEST['Alder'];
         
         //Sjekker om $Alder er STØRRE enn 18, hvis den er det så kjøres første Echo, hvis ikke kjøres andre.
         if($Alder >= 18) {
@@ -29,6 +30,9 @@
         } else {
             echo "<br><h3>$Navn er $Alder år og er dermed ikke myndig!</h3>";
         }
+        }
+        
+        
     ?>
 </body>
 </html>
