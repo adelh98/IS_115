@@ -23,8 +23,8 @@
     $arr[15] = "Saks";
 
     //Lager en løkke
-    foreach ($arr as $key=>$string) {
-        print_r("På index: $key har vi $string<br>");
+    foreach ($arr as $key=>$value) {
+        print_r("På index: $key har vi $value<br>");
     }
     
 
