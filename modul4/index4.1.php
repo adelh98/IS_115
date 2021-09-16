@@ -24,7 +24,7 @@
 
     //Lager en løkke
     foreach ($arr as $key=>$value) {
-        print_r("På index: $key har vi $value<br>");
+        print_r("På index <b>'$key'</b> har vi <b>'$value'</b><br>");
     }
     
 
