@@ -11,11 +11,11 @@
 </head>
 <pre>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-  Fornavn: <input type="text" name="navn" placeholder="Fornavn"><br>
-  Etternavn: <input type="text" name="enavn" placeholder="Etternavn"><br>
-  E-post: <input type="email" name="epost" placeholder="E-post"><br>
-  Telefon: <input type="tel" name="tlf" placeholder="Mobilnummer"><br>
-  Fødselsdato: <input type="date" name="fdato" value="2011-05-05"><br>
+  Fornavn: <input type="text" name="navn" placeholder="Fornavn" required><br>
+  Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
+  E-post: <input type="email" name="epost" placeholder="E-post" required><br>
+  Telefon: <input type="tel" name="tlf" placeholder="Mobilnummer" required><br>
+  Fødselsdato: <input type="date" name="fdato" value="2011-05-05" required><br>
   <input type="submit" name='registrer' value="Registrér">
 </form>
 </pre>
@@ -23,27 +23,33 @@
     <?php
         //Henter variabler fra bruker input
          if(isset($_REQUEST['registrer'])) {
-            $medlemNavn = $_POST['navn'];
+            $medlemNavn = $_REQUEST['navn'];
             $medlemEtternavn = $_REQUEST['enavn'];
             $medlemEpost = $_REQUEST['epost'];
             $medlemMobilnummer = $_REQUEST['tlf'];
             $medlemFdato = $_REQUEST['fdato'];
+            
+            //Lager arrayen som variablene blir lagret it
+            $medlemmer = array(
+                $medlemNavn,
+                $medlemEtternavn,
+                $medlemEpost,
+                $medlemMobilnummer,
+                $medlemFdato
+            );
+
+            //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
+            echo "Du er registrert med følgende informasjon:<br>";
+            echo "<br>";
+            foreach ($medlemmer as $value) {
+                print_r("$value</b><br>");
+            }
            
         }
 
 
-        $medlemmer = array(
-            $medlemNavn,
-            $medlemEtternavn,
-            $medlemEpost,
-            $medlemMobilnummer,
-            $medlemFdato
-        );
-        echo "Du er registrert med følgende informasjon:<br>";
-        echo "<br>";
-        foreach ($medlemmer as $key=>$value) {
-            print_r("På index <b>'$key'</b> har vi <b>'$value'</b><br>");
-        }
+
+     
 
         
 
