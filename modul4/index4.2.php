@@ -21,28 +21,23 @@
 </pre>
 <body>
     <?php
-        //Henter variabler fra bruker input
-         if(isset($_REQUEST['registrer'])) {
-            $medlemNavn = $_REQUEST['navn'];
-            $medlemEtternavn = $_REQUEST['enavn'];
-            $medlemEpost = $_REQUEST['epost'];
-            $medlemMobilnummer = $_REQUEST['tlf'];
-            $medlemFdato = $_REQUEST['fdato'];
-            
-            //Lager arrayen som variablene blir lagret it
+         if(isset($_REQUEST['registrer'])) {            
+            //Data fra bruker input lagres i array $medlemmer
             $medlemmer = array(
-                $medlemNavn,
-                $medlemEtternavn,
-                $medlemEpost,
-                $medlemMobilnummer,
-                $medlemFdato
+                'Fornavn' => $_REQUEST['navn'],
+                'Etternavn' => $_REQUEST['enavn'],
+                'Epost' => $_REQUEST['epost'],
+                'Mobilnummer' => $_REQUEST['tlf'],
+                'Fødseldato' => $_REQUEST['fdato']
             );
 
             //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
+            //Bekreftelsen på registrering til bruker
             echo "Du er registrert med følgende informasjon:<br>";
             echo "<br>";
-            foreach ($medlemmer as $value) {
-                print_r("$value</b><br>");
+            echo "<br><strong>Inormasjon registrert:</strong><br>";
+            foreach ($medlemmer as $field => $value) {
+                print_r("$field : $value</b><br>");
             }
            
         }
