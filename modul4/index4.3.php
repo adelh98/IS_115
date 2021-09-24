@@ -17,48 +17,48 @@
             'Epost' => "dmi@hotmail.no",
             'Mobilnummer' => 98138405,
             'Fødseldato' => '01.01.2000'
- 
         );
     ?>
 <pre>
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-  Fornavn: <input type="text" name="navn" value="<?php 
-  if (empty( $_REQUEST['navn'])) {
-        echo $medlemmer['Fornavn'];
-  } else {
-        echo $_REQUEST['navn'];
-  }?>" placeholder="Fornavn" required/><br>
+    <h2>Medlemsinformasjon:</h2>
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        Fornavn: <input type="text" name="navn" value="<?php 
+            if (empty( $_REQUEST['navn'])) { //Sjekker om input fra bruker er tom eller ikke
+                echo $medlemmer['Fornavn']; //Hvis den er tom, tar jeg fra listen
+            } else {
+                echo $_REQUEST['navn']; //Hvis ikke, tar jeg inputen og bruker den som valuen.
+    }?>" placeholder="Fornavn" required/><br>
 
-  Etternavn: <input type="text" name="enavn" value= <?php 
-    if (empty( $_REQUEST['enavn'])) {
-        echo $medlemmer['Etternavn'];
-  } else {
-        echo $_REQUEST['enavn'];
-  }?> placeholder="Etternavn" required><br>
+        Etternavn: <input type="text" name="enavn" value= <?php 
+            if (empty( $_REQUEST['enavn'])) {
+                echo $medlemmer['Etternavn'];
+            } else {
+                echo $_REQUEST['enavn'];
+    }?> placeholder="Etternavn" required><br>
 
-  E-post: <input type="email" name="epost"  value= <?php 
-    if (empty( $_REQUEST['epost'])) {
-        echo $medlemmer['Epost'];
-  } else {
-        echo $_REQUEST['epost'];
-  }?> placeholder="E-post" required><br>
+         E-post: <input type="email" name="epost"  value= <?php 
+            if (empty( $_REQUEST['epost'])) {
+                echo $medlemmer['Epost'];
+            } else {
+                echo $_REQUEST['epost'];
+    }?> placeholder="E-post" required><br>
 
-  Telefon: <input type="tel" name="tlf"  value= <?php 
-    if (empty( $_REQUEST['tlf'])) {
-        echo $medlemmer['Mobilnummer'];
-  } else {
-        echo $_REQUEST['tlf'];
-  }?> placeholder="Mobilnummer" required><br>
+        Telefon: <input type="tel" name="tlf"  value= <?php 
+            if (empty( $_REQUEST['tlf'])) {
+                echo $medlemmer['Mobilnummer'];
+            } else {
+                echo $_REQUEST['tlf'];
+    }?> placeholder="Mobilnummer" required><br>
 
-  Fødselsdato: <input type="date" name="fdato"  value= <?php 
-    if (empty( $_REQUEST['fdato'])) {
-        echo $medlemmer['Fødseldato'];
-  } else {
-        echo $_REQUEST['fdato'];
-  }?> required><br>
+        Fødselsdato: <input type="date" name="fdato"  value= <?php 
+            if (empty( $_REQUEST['fdato'])) {
+                echo $medlemmer['Fødseldato'];
+            } else {
+                echo $_REQUEST['fdato'];
+    }?> required><br>
 
-  <input type="submit" name='endre' value="Endre">
-</form>
+        <input type="submit" name='endre' value="Endre">
+    </form>
 </pre>
 <body>
     <?php 
@@ -72,11 +72,12 @@
             'Mobilnummer' => $_REQUEST['tlf'],
             'Fødseldato' => $_REQUEST['fdato']
         );
+
         //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
         //Bekreftelsen på registrering til bruker
-        echo "<br><strong>Ny inormasjon registrert:</strong><br>";
+        echo "<h3>Ny inormasjon registrert:</h3>";
         foreach ($medlemmer as $field => $value) {
-            print_r("$field: $value</b><br>");
+            print_r("<b>$field</b>: $value</b><br>");
         }
     }
     ?>
