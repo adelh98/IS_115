@@ -27,19 +27,19 @@
            $formatedNumber = number_format($nummer, 0, null, " "); //Re-formaterer nummeret til gruppe indeling på tusener, hundre osv
            $formatedNumber = explode(' ', $formatedNumber); //Her deler jeg opp en string med en annen string. Optimaliserer Output meldingen
           
-           //(int) caster til int fra String, på den måten vil return valuen få INT datatype istedet for string. Hjelper for senere utregninger.
            
            /*Her lager jeg logikken outputen for setningen. formatedNumber er gjort om til en array med 0, 1, 2 og 3 osv som index for hver grupering.
            * Henter da hver index, og legger til en string på enden, samtidig som jeg fletter dem sammen i en hel setning.
            * For Hundre og Ener kategorien kreves det en egen innebygd logikk for å regne om. Da har jeg laget $antallHundre og brukt modulo operatoren.
            */
           
-           $nummer = ""; //Setter variabelen om til en string for ikke å få konflikt med datatyper under utregning
+          $nummer = ""; //Setter variabelen om til en string for ikke å få konflikt med datatyper under utregning
           
-           /*Sjekker om det er nødvendig å benytte "x" ved å sjekke om at det faktisk finnes en x-ende index i arrayen.
-           * Dette gjøres ved å bruke funksjonen count(), hvor jeg fører inn Arrayen og teller.
-           * Denne logikken blir også gjentatt hele tiden for å sjekke når "neste" seksjon må benyttes.
-           */
+          /*Sjekker om det er nødvendig å benytte "x" ved å sjekke om at det faktisk finnes en x-ende index i arrayen.
+          * Dette gjøres ved å bruke funksjonen count(), hvor jeg fører inn Arrayen og teller.
+          * Denne logikken blir også gjentatt hele tiden for å sjekke når "neste" seksjon må benyttes.
+          */
+          //(int) caster til int fra String, på den måten vil return valuen få INT datatype istedet for string. Hjelper for senere utregninger.
           if( count($formatedNumber) >= 7 ){
             $nummer .= (int)$formatedNumber[count($formatedNumber)-7] . ' Trillion(er), ';
             }
