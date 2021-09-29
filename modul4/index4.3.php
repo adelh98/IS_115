@@ -16,7 +16,7 @@
             'Etternavn' => "Hodzalari",
             'Epost' => "dmi@hotmail.no",
             'Mobilnummer' => 98138405,
-            'Fødseldato' => '01.01.2000'
+            'Fødseldato' => '1998-07-29'
         );
     ?>
 <pre>
