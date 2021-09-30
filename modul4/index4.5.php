@@ -61,7 +61,7 @@
             
         }
         
-        while ($oppdatertListe > 1){
+        while (count($oppdatertListe) > 1){
         echo "<br>";
         
             $key = array_search(min($oppdatertListe), $oppdatertListe);
