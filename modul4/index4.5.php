@@ -13,16 +13,16 @@
     <?php 
     //Lager listen med deltakere uten noe "value" fordi de ikke har begynt enda
         $deltakere = array(
-            "Adel" => "",
-            "Oskar" => "",
-            "Dzenet" => "",
-            "Adrian" => "",
-            "Ronald" => "",
-            "Petter" => "",
-            "Hercules" => "",
-            "Odin" => "",
-            "Felix" => "",
-            "Rolf" => ""
+            "Adel" => 0,
+            "Oskar" => 0,
+            "Dzenet" => 0,
+            "Adrian" => 0,
+            "Ronald" => 0,
+            "Petter" => 0,
+            "Hercules" => 0,
+            "Odin" => 0,
+            "Felix" => 0,
+            "Rolf" => 0
         );
     //Printer listen med deltakere
         echo "<h3>Deltakerene i konkuransen er:</h3>";
@@ -30,49 +30,33 @@
             print_r("Navn: $key<br>"); 
         }
         echo "<br>";
-    
-    //Setter opp random funksjonen
-        $max = 50;
-        $min = 1;
-        rand($min, $max);
-    //Lager ny liste med samme deltakere som tar in rand() funksjonen for å gi et tilfeldig tall til hver av deltakerne
-        $rand = array(
-            "Adel" => rand($min, $max),
-            "Oskar" => rand($min, $max),
-            "Dzenet" => rand($min, $max),
-            "Adrian" => rand($min, $max),
-            "Ronald" => rand($min, $max),
-            "Petter" => rand($min, $max),
-            "Hercules" => rand($min, $max),
-            "Odin" => rand($min, $max),
-            "Felix" => rand($min, $max),
-            "Rolf" => rand($min, $max)
-        );
-        
-    //Den nye listen spleises med den gamle for å få oppdatert tall og sorteres
-        $oppdatertListe = array_replace($deltakere, $rand);
-        arsort($oppdatertListe);
-     
 
-        
-        //Lager en foreach-løkke som printer navn med poengsum ved siden av.
-        foreach ($oppdatertListe as $key => $value){
-            echo "Navn: $key || Score: $value<br>";
-            
+    //Lager ny liste med samme deltakere som tar in rand() funksjonen for å gi et tilfeldig tall til hver av deltakerne
+        foreach ($deltakere as $key => $value) {
+            $deltakerTall = rand(1, 50);
+            $deltakere[$key] = $deltakerTall;
         }
-        
-        while (count($oppdatertListe) > 1){
+        arsort($deltakere); //Sortere liste.
+
+    //Lager en foreach-løkke som printer navn med poengsum ved siden av.
+    foreach ($deltakere as $key => $value){
+        echo "Navn: $key || Score: $value<br>";   
+        }   
+        while (count($deltakere) > 1){
         echo "<br>";
-        
-            $key = array_search(min($oppdatertListe), $oppdatertListe);
+            $key = array_search(min($deltakere), $deltakere);
             if  ($key !== false) {
-                unset($oppdatertListe[$key]);
-                echo "<br>Slettet $key <br>";
+                unset($deltakere[$key]);
+                echo "<br>Slettet $key <br><br>";
             } else {
-                echo "Vinneren er $key!";
+                echo "Error";
             }
-        
-            foreach ($oppdatertListe as $key => $value){
+        foreach ($deltakere as $key => $value) {
+            $deltakerTall = rand(1, 50);
+            $deltakere[$key] = $deltakerTall;
+         }
+            arsort($deltakere); //Sortere liste.
+            foreach ($deltakere as $key => $value){
                 echo "Navn: $key || Score: $value<br>";   
             }
     }
