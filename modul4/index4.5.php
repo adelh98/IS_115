@@ -52,27 +52,30 @@
     //Den nye listen spleises med den gamle for å få oppdatert tall og sorteres
         $oppdatertListe = array_replace($deltakere, $rand);
         arsort($oppdatertListe);
+     
+
         
-    //Lager en foreach-løkke som printer navn med poengsum ved siden av.
+        //Lager en foreach-løkke som printer navn med poengsum ved siden av.
         foreach ($oppdatertListe as $key => $value){
             echo "Navn: $key || Score: $value<br>";
-
-        }
-        echo "Size test<br>";
-        $size = count($oppdatertListe);
-        for($i = 0; $i <= $size; $i++) {
-            slettFraListe($oppdatertListe);
-
-            foreach ($oppdatertListe as $key => $value){
-                echo "Navn: $key || Score: $value<br>";
-            }
-            return $size;
+            
         }
         
-        function slettFraListe($list) {
-            unset($list[array_search(min($list), $list)]);
-            return $list;
-        }
+        while ($oppdatertListe > 1){
+        echo "<br>";
+        
+            $key = array_search(min($oppdatertListe), $oppdatertListe);
+            if  ($key !== false) {
+                unset($oppdatertListe[$key]);
+                echo "<br>Slettet $key <br>";
+            } else {
+                echo "Vinneren er $key!";
+            }
+        
+            foreach ($oppdatertListe as $key => $value){
+                echo "Navn: $key || Score: $value<br>";   
+            }
+    }
 
  
 
