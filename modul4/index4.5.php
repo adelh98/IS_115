@@ -31,35 +31,40 @@
         }
         echo "<br>";
 
-    //Lager ny liste med samme deltakere som tar in rand() funksjonen for å gi et tilfeldig tall til hver av deltakerne
+        //Lager ny liste med samme deltakere som tar in rand() funksjonen for å gi et tilfeldig tall til hver av deltakerne
+        
+        echo "Runde tall her?<br><br>";
         foreach ($deltakere as $key => $value) {
-            $deltakerTall = rand(1, 50);
+            $deltakerTall = rand(1, 5);
             $deltakere[$key] = $deltakerTall;
         }
         arsort($deltakere); //Sortere liste.
 
     //Lager en foreach-løkke som printer navn med poengsum ved siden av.
     foreach ($deltakere as $key => $value){
-        echo "Navn: $key || Score: $value<br>";   
+        echo "Navn: $key || Score: $value<br>\n";   
         }   
         while (count($deltakere) > 1){
-        echo "<br>";
-            $key = array_search(min($deltakere), $deltakere);
-            if  ($key !== false) {
-                unset($deltakere[$key]);
-                echo "<br>Slettet $key <br><br>";
-            } else {
-                echo "Error";
-            }
+            echo "<br>";
+            $lavesteVerdi = array_search(min($deltakere), $deltakere);
+                unset($deltakere[$lavesteVerdi]);
+                echo "Slettet $lavesteVerdi <br><br>";
+                        
         foreach ($deltakere as $key => $value) {
-            $deltakerTall = rand(1, 50);
+            $deltakerTall = rand(1, 5);
             $deltakere[$key] = $deltakerTall;
          }
             arsort($deltakere); //Sortere liste.
+        
+        if(count($deltakere) > 1) {
             foreach ($deltakere as $key => $value){
                 echo "Navn: $key || Score: $value<br>";   
             }
+        } else {
+            echo "Vinneren er $key med en score på $value!";
+        }
     }
+            
 
  
 
