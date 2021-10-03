@@ -16,7 +16,12 @@
             'Etternavn' => "Hodzalari",
             'Epost' => "dmi@hotmail.no",
             'Mobilnummer' => 98138405,
-            'Fødseldato' => '1998-07-29'
+            'Kjønn' => "Mann",
+            'Fødseldato' => '1998-07-29',
+            'Kjønn' => 'Mann',
+            'Interesser' => "Trening",
+            'Kursaktiviteter' => 'Maling',
+            'Kontigentstatus' => 'Betalt'
         );
     ?>
 <pre>
@@ -49,13 +54,88 @@
             } else {
                 echo $_REQUEST['tlf'];
     }?> placeholder="Mobilnummer" required><br>
-
+    <h2>Annen Informasjon:</h2>
+    Kjønn: <input type="radio" name="kjønn" id="male" value=<?php 
+            if (empty( $_REQUEST['kjønn'])) {
+                echo $medlemmer['Kjønn'];
+            } else {
+                echo $_REQUEST['kjønn'];
+    }?> checked> <label for="mann">Mann</label> 
+           <input type="radio" name="kjønn" id="female" value=<?php 
+            if (empty( $_REQUEST['kjønn'])) {
+                echo $medlemmer['Kjønn'];
+            } else {
+                echo $_REQUEST['kjønn'];
+    }?> > <label for="kvinne">Kvinne</label><br>
         Fødselsdato: <input type="date" name="fdato"  value= <?php 
             if (empty( $_REQUEST['fdato'])) {
                 echo $medlemmer['Fødseldato'];
             } else {
                 echo $_REQUEST['fdato'];
     }?> required><br>
+    <h2>Medlemsinformasjon:</h2>
+    Interesser: <input type="radio" id="trening" name="interesser" value= <?php 
+            if (empty( $_REQUEST['interesser'])) {
+                echo $medlemmer['Interesser'];
+            } else {
+                echo $_REQUEST['interesser'];
+    }?>> <label for="trening">Trening</label>
+                <input type="radio" id="musikk" name="interesser" value=<?php 
+            if (empty( $_REQUEST['interesser'])) {
+                echo $medlemmer['Interesser'];
+            } else {
+                echo $_REQUEST['interesser'];
+    }?>> <label for="musikk">Musikk</label>
+                <input type="radio" id="gaming" name="interesser" value=<?php 
+            if (empty( $_REQUEST['interesser'])) {
+                echo $medlemmer['Interesser'];
+            } else {
+                echo $_REQUEST['interesser'];
+    }?>> <label for="gaming">Gaming</label>
+                <input type="radio" id="løping" name="interesser" value=<?php 
+            if (empty( $_REQUEST['interesser'])) {
+                echo $medlemmer['Interesser'];
+            } else {
+                echo $_REQUEST['interesser'];
+    }?>> <label for="løping">Løping</label><br>
+    Kursaktiviteter: 
+              <input type="radio" id="maling" name="kursaktiviteter" value=<?php 
+            if (empty( $_REQUEST['kursaktiviteter'])) {
+                echo $medlemmer['Kursaktiviteter'];
+            } else {
+                echo $_REQUEST['kursaktiviteter'];
+    }?>> <label for="maling">Maling</label>
+              <input type="radio" id="seiling" name="kursaktiviteter" value=<?php 
+            if (empty( $_REQUEST['kursaktiviteter'])) {
+                echo $medlemmer['Kursaktiviteter'];
+            } else {
+                echo $_REQUEST['kursaktiviteter'];
+    }?>> <label for="seiling">Seiling</label>
+              <input type="radio" id="klatring" name="kursaktiviteter" value=<?php 
+            if (empty( $_REQUEST['kursaktiviteter'])) {
+                echo $medlemmer['Kursaktiviteter'];
+            } else {
+                echo $_REQUEST['kursaktiviteter'];
+    }?>> <label for="klatring">Klatring</label>
+              <input type="radio" id="programmering" name="kursaktiviteter" value=<?php 
+            if (empty( $_REQUEST['kursaktiviteter'])) {
+                echo $medlemmer['Kursaktiviteter'];
+            } else {
+                echo $_REQUEST['kursaktiviteter'];
+    }?>> <label for="programmering">Programmering</label><br>
+    Kontigentstatus: 
+              <input type="radio" name="kontigent" id="betalt" value=<?php 
+            if (empty( $_REQUEST['kontigent'])) {
+                echo $medlemmer['Kontigentstatus'];
+            } else {
+                echo $_REQUEST['kontigent'];
+    }?>> <label for="betalt">Betalt</label> 
+              <input type="radio" name="kontigent" id="ikke betalt" value=<?php 
+            if (empty( $_REQUEST['kontigent'])) {
+                echo $medlemmer['Kontigentstatus'];
+            } else {
+                echo $_REQUEST['kontigent'];
+    }?>> <label for="ikke betalt">Ikke betalt</label><br>
 
         <input type="submit" name='endre' value="Endre">
     </form>
@@ -70,7 +150,11 @@
             'Etternavn' => $_REQUEST['enavn'],
             'Epost' => $_REQUEST['epost'],
             'Mobilnummer' => $_REQUEST['tlf'],
-            'Fødseldato' => $_REQUEST['fdato']
+            'Fødseldato' => $_REQUEST['fdato'],
+            'Kjønn' => $_REQUEST['kjønn'],
+            'Interesser' => $_REQUEST['interesser'],
+            'Kursaktiviteter' => $_REQUEST['kursaktiviteter'],
+            'Kontigentstatus' => $_REQUEST['kontigent']
         );
 
         //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
