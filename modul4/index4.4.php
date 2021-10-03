@@ -23,27 +23,27 @@
             print_r("<b>Index: $key</b> = $value<br>");
         }
         echo "<h3>Ferdig!</h3>";
-
-        //Lager en variabel som skal bli brukt til å erstatte elementene i en eksisterende liste.
-        $erstattning = array("UiA", "UiO", "Bilbo", "Baggings", "Mordor", "Ferrari", "Julenissen", "Ole Brum", "Nassenøff", "Er skikkelig tøff");
-
+       
         echo "<h3>Listen etter element erstattning:</h3>";
-            $erstattetListe = array_replace($arr, $erstattning);
-            foreach ($erstattetListe as $key => $value) {
-                print_r("<b>Index: $key</b> = $value<br>"); 
-            }
-            echo "<h3>Ferdig!</h3>";
+        foreach ($arr as $key => $value) {
+            $deltakerTall = rand(1,100); //Gir random tall for hver index i listen
+            $arr[$key] = $deltakerTall;
+        }
+        foreach($arr as $key => $value) {
+            print_r("<b>Index: $key</b> = $value<br>");
+        }
+        echo "<h3>Ferdig!</h3>";
         
         //Her lager jeg logikk og variabler for å starte indexen høyere:
         $nyIndexStart = 10;
   
-        $erstattetListe = array_combine(range($nyIndexStart, 
-                count($erstattetListe) + ($nyIndexStart-1)),
-                array_values($erstattetListe));
+        $arr = array_combine(range($nyIndexStart, 
+                count($arr) + ($nyIndexStart-1)),
+                array_values($arr));
   
         echo "<h3>Listen etter Re-Indexing:</h3>";
         
-        foreach ($erstattetListe as $key => $value) {
+        foreach ($arr as $key => $value) {
             print_r("<b>Index: $key</b> = $value<br>"); 
         }
         echo "<h3>Ferdig!</h3>";
