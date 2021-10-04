@@ -55,87 +55,26 @@
                 echo $_REQUEST['tlf'];
     }?> placeholder="Mobilnummer" required><br>
     <h2>Annen Informasjon:</h2>
-    Kjønn: <input type="radio" name="kjønn" id="male" value=<?php 
-            if (empty( $_REQUEST['kjønn'])) {
-                echo $medlemmer['Kjønn'];
-            } else {
-                echo $_REQUEST['kjønn'];
-    }?> checked> <label for="mann">Mann</label> 
-           <input type="radio" name="kjønn" id="female" value=<?php 
-            if (empty( $_REQUEST['kjønn'])) {
-                echo $medlemmer['Kjønn'];
-            } else {
-                echo $_REQUEST['kjønn'];
-    }?> > <label for="kvinne">Kvinne</label><br>
-        Fødselsdato: <input type="date" name="fdato"  value= <?php 
-            if (empty( $_REQUEST['fdato'])) {
-                echo $medlemmer['Fødseldato'];
-            } else {
-                echo $_REQUEST['fdato'];
-    }?> required><br>
+    <b>Kjønn:</b>  <input type="radio" name="kjønn" value= "Mann" <?php if (isset( $_REQUEST['kjønn']) && $_REQUEST['kjønn']=="Mann") {echo "checked"; } ?>>Mann <input type="radio" name="kjønn" value= "Kvinne" <?php if (isset( $_REQUEST['kjønn']) && $_REQUEST['kjønn']=="Kvinne") {echo "checked"; } ?>>Kvinne</label><br>
+    
+    <b>Fødselsdato:</b>  <input type="date" name="fdato"  value= <?php if (empty( $_REQUEST['fdato'])) {echo $medlemmer['Fødseldato'];} else {echo $_REQUEST['fdato'];} ?> required><br>
+    
     <h2>Medlemsinformasjon:</h2>
-    Interesser: <input type="radio" id="trening" name="interesser" value= <?php 
-            if (empty( $_REQUEST['interesser'])) {
-                echo $medlemmer['Interesser'];
-            } else {
-                echo $_REQUEST['interesser'];
-    }?>> <label for="trening">Trening</label>
-                <input type="radio" id="musikk" name="interesser" value=<?php 
-            if (empty( $_REQUEST['interesser'])) {
-                echo $medlemmer['Interesser'];
-            } else {
-                echo $_REQUEST['interesser'];
-    }?>> <label for="musikk">Musikk</label>
-                <input type="radio" id="gaming" name="interesser" value=<?php 
-            if (empty( $_REQUEST['interesser'])) {
-                echo $medlemmer['Interesser'];
-            } else {
-                echo $_REQUEST['interesser'];
-    }?>> <label for="gaming">Gaming</label>
-                <input type="radio" id="løping" name="interesser" value=<?php 
-            if (empty( $_REQUEST['interesser'])) {
-                echo $medlemmer['Interesser'];
-            } else {
-                echo $_REQUEST['interesser'];
-    }?>> <label for="løping">Løping</label><br>
-    Kursaktiviteter: 
-              <input type="radio" id="maling" name="kursaktiviteter" value=<?php 
-            if (empty( $_REQUEST['kursaktiviteter'])) {
-                echo $medlemmer['Kursaktiviteter'];
-            } else {
-                echo $_REQUEST['kursaktiviteter'];
-    }?>> <label for="maling">Maling</label>
-              <input type="radio" id="seiling" name="kursaktiviteter" value=<?php 
-            if (empty( $_REQUEST['kursaktiviteter'])) {
-                echo $medlemmer['Kursaktiviteter'];
-            } else {
-                echo $_REQUEST['kursaktiviteter'];
-    }?>> <label for="seiling">Seiling</label>
-              <input type="radio" id="klatring" name="kursaktiviteter" value=<?php 
-            if (empty( $_REQUEST['kursaktiviteter'])) {
-                echo $medlemmer['Kursaktiviteter'];
-            } else {
-                echo $_REQUEST['kursaktiviteter'];
-    }?>> <label for="klatring">Klatring</label>
-              <input type="radio" id="programmering" name="kursaktiviteter" value=<?php 
-            if (empty( $_REQUEST['kursaktiviteter'])) {
-                echo $medlemmer['Kursaktiviteter'];
-            } else {
-                echo $_REQUEST['kursaktiviteter'];
-    }?>> <label for="programmering">Programmering</label><br>
-    Kontigentstatus: 
-              <input type="radio" name="kontigent" id="betalt" value=<?php 
-            if (empty( $_REQUEST['kontigent'])) {
-                echo $medlemmer['Kontigentstatus'];
-            } else {
-                echo $_REQUEST['kontigent'];
-    }?>> <label for="betalt">Betalt</label> 
-              <input type="radio" name="kontigent" id="ikke betalt" value=<?php 
-            if (empty( $_REQUEST['kontigent'])) {
-                echo $medlemmer['Kontigentstatus'];
-            } else {
-                echo $_REQUEST['kontigent'];
-    }?>> <label for="ikke betalt">Ikke betalt</label><br>
+    <b>Interesser:</b> 
+                <input type="radio" name="interesser" value= "Trening" <?php if (isset( $_REQUEST['interesser']) && $_REQUEST['interesser']=="Trening") {echo "checked"; } ?>>Trening
+                <input type="radio" name="interesser" value= "Musikk" <?php if (isset( $_REQUEST['interesser']) && $_REQUEST['interesser']=="Musikk") {echo "checked"; } ?>>Musikk
+                <input type="radio" name="interesser" value= "Dansing" <?php if (isset( $_REQUEST['interesser']) && $_REQUEST['interesser']=="Dansing") {echo "checked"; } ?>>Dansing
+                <input type="radio" name="interesser" value= "Gaming" <?php if (isset( $_REQUEST['interesser']) && $_REQUEST['interesser']=="Gaming") {echo "checked"; } ?>>Gaming</label><br>
+
+    <b>Kursaktiviteter:</b> 
+                <input type="radio" name="kursaktiviteter" value= "Klatring" <?php if (isset( $_REQUEST['kursaktiviteter']) && $_REQUEST['kursaktiviteter']=="Klatring") {echo "checked"; } ?>>Klatring
+                <input type="radio" name="kursaktiviteter" value= "Seiling" <?php if (isset( $_REQUEST['kursaktiviteter']) && $_REQUEST['kursaktiviteter']=="Seiling") {echo "checked"; } ?>>Seiling
+                <input type="radio" name="kursaktiviteter" value= "Programmering" <?php if (isset( $_REQUEST['kursaktiviteter']) && $_REQUEST['kursaktiviteter']=="Programmering") {echo "checked"; } ?>>Programmering
+                <input type="radio" name="kursaktiviteter" value= "Maling" <?php if (isset( $_REQUEST['kursaktiviteter']) && $_REQUEST['kursaktiviteter']=="Maling") {echo "checked"; } ?>>Maling</label><br>
+
+    <b>Kontigentstatus:</b> 
+                <input type="radio" name="kontigent" value= "Betalt" <?php if (isset( $_REQUEST['kontigent']) && $_REQUEST['kontigent']=="Betalt") {echo "checked"; } ?>>Betalt 
+                <input type="radio" name="kontigent" value= "Ikke betalt" <?php if (isset( $_REQUEST['kontigent']) && $_REQUEST['kontigent']=="Ikke betalt") {echo "checked"; } ?>>Ikke betalt</label><br>
 
         <input type="submit" name='endre' value="Endre">
     </form>
