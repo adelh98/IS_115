@@ -18,7 +18,7 @@
   Telefon: <input type="tel" name="tlf" placeholder="98156123" required><br>
   Adresse: <input type="text" name="adresse" placeholder="Lolipoppveien 45" required><br>
   <h2>Annen informasjon:</h2>
-  Kjønn: <input type="radio" name="kjønn" id="male" value="mann" checked> <label for="mann">Mann</label> 
+  Kjønn: <input type="radio" name="kjønn" id="male" value="mann"> <label for="mann">Mann</label> 
          <input type="radio" name="kjønn" id="female" value="kvinne"> <label for="kvinne">Kvinne</label><br>
   Fødselsdato: <input type="date" name="fdato" value="2011-05-05" required>
   <br>
@@ -33,7 +33,7 @@
               <input type="radio" id="klatring" name="kursaktiviteter" value="Klatring"> <label for="klatring">Klatring</label>
               <input type="radio" id="programmering" name="kursaktiviteter" value="Programmering"> <label for="programmering">Programmering</label><br>
   Kontigentstatus: 
-              <input type="radio" name="kontigent" id="betalt" value="Betalt" checked> <label for="betalt">Betalt</label> 
+              <input type="radio" name="kontigent" id="betalt" value="Betalt"> <label for="betalt">Betalt</label> 
               <input type="radio" name="kontigent" id="ikke betalt" value="Ikke betalt"> <label for="ikke betalt">Ikke betalt</label><br>
 
   <input type="submit" name='registrer' value="Registrér">

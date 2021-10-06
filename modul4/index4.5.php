@@ -47,9 +47,9 @@
         while (count($deltakere) > 1){
             echo "<br>";
             $lavesteVerdi = array_search(min($deltakere), $deltakere);
-                unset($deltakere[$lavesteVerdi]);
-                echo "Slettet $lavesteVerdi <br><br>";
-                        
+            unset($deltakere[$lavesteVerdi]);
+            echo "Slettet $lavesteVerdi <br><br>";
+            
         foreach ($deltakere as $key => $value) {
             $deltakerTall = rand(1, 5);
             $deltakere[$key] = $deltakerTall;
