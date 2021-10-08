@@ -18,11 +18,11 @@
             "Dzenet" => 0,
             "Adrian" => 0,
             "Ronald" => 0,
-            "Petter" => 0,
+            "Victor" => 0,
             "Hercules" => 0,
             "Odin" => 0,
             "Felix" => 0,
-            "Rolf" => 0
+            "Helikopter" => 0
         );
     //Printer listen med deltakere
         echo "<h3>Deltakerene i konkuransen er:</h3>";
