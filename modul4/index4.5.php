@@ -31,9 +31,6 @@
         }
         echo "<br>";
 
-        //Lager ny liste med samme deltakere som tar in rand() funksjonen for å gi et tilfeldig tall til hver av deltakerne
-        
-        echo "Runde tall her?<br><br>";
         foreach ($deltakere as $key => $value) {
             $deltakerTall = rand(1, 5);
             $deltakere[$key] = $deltakerTall;
@@ -43,31 +40,34 @@
     //Lager en foreach-løkke som printer navn med poengsum ved siden av.
     foreach ($deltakere as $key => $value){
         echo "Navn: $key || Score: $value<br>\n";   
-        }   
-        while (count($deltakere) > 1){
-            echo "<br>";
-            $lavesteVerdi = array_search(min($deltakere), $deltakere);
-            unset($deltakere[$lavesteVerdi]);
-            echo "Slettet $lavesteVerdi <br><br>";
-            
-        foreach ($deltakere as $key => $value) {
-            $deltakerTall = rand(1, 5);
-            $deltakere[$key] = $deltakerTall;
-         }
-            arsort($deltakere); //Sortere liste.
-        
-        if(count($deltakere) > 1) {
-            foreach ($deltakere as $key => $value){
-                echo "Navn: $key || Score: $value<br>";   
-            }
-        } else {
-            echo "Vinneren er $key med en score på $value!";
         }
-    }
+        
+        while (count($deltakere) > 1){
+
+            $lavesteVerdi = min($deltakere);
             
+            foreach ($deltakere as $key => $value) {
+                if($value === $lavesteVerdi) {
+                    unset($deltakere[$key]);
+                    echo "<strong style=color:red> Slettet $key med $value poeng. </strong><br><br>";
+                }
+            }
 
- 
-
+            foreach ($deltakere as $key => $value) {
+                $deltakerTall = rand(1, 5);
+                $deltakere[$key] = $deltakerTall;
+            }
+            arsort($deltakere); //Sortere liste.
+            
+            if(count($deltakere) > 1) {
+                foreach ($deltakere as $key => $value){
+                    echo "Navn: $key || Score: $value<br>";   
+                }
+            } else {
+                echo "<strong style=color:green>Vinneren er $key med en score på $value!</strong><br><br>";
+            }
+        }
+            
     ?>
 </body>
 </html>
