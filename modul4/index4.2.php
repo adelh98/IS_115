@@ -18,23 +18,23 @@
   Telefon: <input type="tel" name="tlf" placeholder="98156123" required><br>
   Adresse: <input type="text" name="adresse" placeholder="Lolipoppveien 45" required><br>
   <h2>Annen informasjon:</h2>
-  Kjønn: <input type="radio" name="kjønn" id="male" value="mann"> <label for="mann">Mann</label> 
-         <input type="radio" name="kjønn" id="female" value="kvinne"> <label for="kvinne">Kvinne</label><br>
+  Kjønn: <input type="radio" name="kjønn" id="male" value="Mann" required> <label for="mann">Mann</label> 
+         <input type="radio" name="kjønn" id="female" value="Kvinne" > <label for="kvinne">Kvinne</label><br>
   Fødselsdato: <input type="date" name="fdato" value="2011-05-05" required>
   <br>
   <h2>Medlemsinformasjon:</h2>
-  Interesser: <input type="radio" id="trening" name="interesser" value="Trening"> <label for="trening">Trening</label>
-              <input type="radio" id="musikk" name="interesser" value="Musikk"> <label for="musikk">Musikk</label>
-              <input type="radio" id="gaming" name="interesser" value="Gaming"> <label for="gaming">Gaming</label>
-              <input type="radio" id="løping" name="interesser" value="Løping"> <label for="løping">Løping</label><br>
+  Interesser: <input type="radio" id="trening" name="interesser" value="Trening" required> <label for="trening">Trening </label>
+              <input type="radio" id="musikk" name="interesser" value="Musikk" > <label for="musikk">Musikk</label>
+              <input type="radio" id="gaming" name="interesser" value="Gaming" > <label for="gaming">Gaming</label>
+              <input type="radio" id="løping" name="interesser" value="Løping" > <label for="løping">Løping</label><br>
   Kursaktiviteter: 
-              <input type="radio" id="maling" name="kursaktiviteter" value="Maling"> <label for="maling">Maling</label>
-              <input type="radio" id="seiling" name="kursaktiviteter" value="Seiling"> <label for="seiling">Seiling</label>
-              <input type="radio" id="klatring" name="kursaktiviteter" value="Klatring"> <label for="klatring">Klatring</label>
-              <input type="radio" id="programmering" name="kursaktiviteter" value="Programmering"> <label for="programmering">Programmering</label><br>
+              <input type="radio" id="maling" name="kursaktiviteter" value="Maling" required> <label for="maling">Maling</label>
+              <input type="radio" id="seiling" name="kursaktiviteter" value="Seiling" > <label for="seiling">Seiling</label>
+              <input type="radio" id="klatring" name="kursaktiviteter" value="Klatring" > <label for="klatring">Klatring</label>
+              <input type="radio" id="programmering" name="kursaktiviteter" value="Programmering" > <label for="programmering">Programmering</label><br>
   Kontigentstatus: 
-              <input type="radio" name="kontigent" id="betalt" value="Betalt"> <label for="betalt">Betalt</label> 
-              <input type="radio" name="kontigent" id="ikke betalt" value="Ikke betalt"> <label for="ikke betalt">Ikke betalt</label><br>
+              <input type="radio" name="kontigent" id="betalt" value="Betalt" required> <label for="betalt">Betalt</label> 
+              <input type="radio" name="kontigent" id="ikke betalt" value="Ikke betalt" > <label for="ikke betalt">Ikke betalt</label><br>
 
   <input type="submit" name='registrer' value="Registrér">
 </form>
