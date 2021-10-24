@@ -13,15 +13,31 @@
     <?php
     //Lager en string som jeg skal kryptere og dekrpytere
     $string = "Jeg heter Adel";
-    
+
     echo "Orignale strengen er '<b>$string</b>' \n";
+    
+    $arr = str_split($string);
+    
+    echo "<br>Den kryptertse strenger er: \n";
 
-    echo "<br>Kryptering av strengen blir: "; 
-    for($i = 0; $i < strlen($string); $i++ ) {
-        $kryptert = mb_ord($string);
+    $emptyArr = []; //Lager tomt array for å føre inn tallene jeg får fra loopen.
 
+    foreach ($arr as $char) {
+      $kryptert = ord($char);
+      $emptyArr[] = (string)$kryptert; //Fører tallene inn i det tomme arrayet
     }
-    echo $kryptert;
+
+    shuffle($emptyArr);
+    
+    $kryptertString = implode("", $emptyArr);
+
+    echo $kryptertString; //Printer den krypterte stringen
+
+
+
+
+
+
 
     
 
