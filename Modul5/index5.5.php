@@ -27,22 +27,22 @@
       $emptyArr[] = (string)$kryptert; //Fører tallene inn i det tomme arrayet
     }
 
-    shuffle($emptyArr);
-    
     $kryptertString = implode("", $emptyArr);
-
-    echo $kryptertString; //Printer den krypterte stringen
-
-
-
-
-
-
-
     
+    echo $kryptertString; //Printer den krypterte stringen
+    
+    echo "<br>Den de-krypterte strenger er: \n";
+   
+    $newArr = [];
+    
+    foreach ($emptyArr as $char) {
+      $dekrypt = chr($char);
+      $newArr[] = (string)$dekrypt;
+    }
 
+    $dekrypterString = implode("", $newArr);
 
-
+    echo $dekrypterString;
 
     ?>
 </body>
