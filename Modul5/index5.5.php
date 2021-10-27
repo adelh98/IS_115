@@ -26,7 +26,7 @@
       
       //Looper gjennom arrayen, og krypterer hver bokstav og fører inn i et nytt og tomt array.
       foreach ($arr as $char) {
-        $kryptert = ord($char);
+        $kryptert = ord($char); //ord() krypterer til ASCII
         $emptyArr[] = (string)$kryptert; //Fører tallene inn i det tomme arrayet, og caster til "string" for å få riktig datatype
       }
       
