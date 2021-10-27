@@ -16,7 +16,7 @@
 
     echo "Orignale strengen er '<b>$string</b>' \n"; //Printer den originale strenger
     
-    encrypt($string); //Kaller på første funksjonen, som krypterer originale strengen
+    $krypter = encrypt($string); //Kaller på første funksjonen, som krypterer originale strengen
     
     function encrypt($stringInput) {
       
@@ -33,9 +33,12 @@
       $kryptertString = implode("", $emptyArr); //Setter sammen arrayet om til en string
       
       echo "<br>Den krypterte strengen er: <b>'$kryptertString'</b>"; //Printer den krypterte stringen
+
+      return $emptyArr;
       
-      decrypt($emptyArr); //La inn kall for dekrpyterings funksjonen for å få den til å kjøre automatisk etter krypteringen.
     }
+    
+    decrypt($krypter); //La inn kall for dekrpyterings funksjonen for å få den til å kjøre automatisk etter krypteringen.
     
     //Denne funksjonene tar inn det nye arrayet fra den encrypt() og dekrypterer.
     function decrypt($arrayInput) {
