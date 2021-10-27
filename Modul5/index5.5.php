@@ -43,7 +43,7 @@
       
       //Looper gjennom arrayet, og dekrypterer og fører inn i nytt array.
       foreach ($arrayInput as $char) {
-        $dekrypt = chr($char);
+        $dekrypt = chr($char); //chr() de-krypterer og gjør om fra ASCII til tekst
         $newArr[] = (string)$dekrypt;
       }
       
