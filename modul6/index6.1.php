@@ -35,9 +35,12 @@
 
     if (mysqli_num_rows($resultat) > 0) {
         //Skriver ut data
+        echo "<table><tr><th>Medlem</th></tr>";
+
         while ($row = mysqli_fetch_assoc($resultat)) {
-            echo "<br><br>Fornavn: " . $row["Fornavn"]. " <br>Etternavn: " . $row["Etternavn"]. " <br>Mobil: ". $row["Mobilnummer"]. "<br>";
-        } 
+            echo "<tr><td>" . $row["Fornavn"]. " | ".$row["Etternavn"]. " | ".$row["Mobilnummer"]."</td></tr>";
+        }
+        echo "</table>"; 
     } else {
         echo "0 Results";
     }
