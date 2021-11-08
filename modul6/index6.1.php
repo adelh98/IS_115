@@ -30,30 +30,70 @@
     //$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
     //VALUES ('Adel', 'Hodzalari', 'jegerkul@hotmail.com', '98138405', 'Langutigokk 234', 'Mann', '29.07.1998', 'Gaming', 'Maling', 'Betalt')";
 
-    $sql = "SELECT Fornavn, Etternavn, Mobilnummer FROM medlemmer";
-    $resultat = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM medlemmer";
 
-    if (mysqli_num_rows($resultat) > 0) {
-        //Skriver ut data
-        echo "<table><tr><th>Medlem</th></tr>";
+    // Setter sammen spørringen til tilkoblingen
+    $stmt = $conn->prepare( $sql );
 
-        while ($row = mysqli_fetch_assoc($resultat)) {
-            echo "<tr><td>" . $row["Fornavn"]. " | ".$row["Etternavn"]. " | ".$row["Mobilnummer"]."</td></tr>";
-        }
-        echo "</table>"; 
-    } else {
-        echo "0 Results";
-    }
-        $conn->close();
+    // Utfører spørring
+    $stmt->execute();
 
-/*
-    if($conn->query($sql) === TRUE) {
-        echo "Ny data lagt til"; 
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-*/
+    // Henter resultat
+    $resultat = $stmt->get_result();
 
     ?>
+
+    <html>
+
+            <!-- Lager en tabell som viser medlemmene i databasen -->
+            <table border="1" cellpadding="5" align="center" style="text-align:center">
+            <tr>
+                <th>Fornavn</th>
+                <th>Etternavn</th>
+                <th>Epost</th>
+                <th>Mobilnummer</th>
+                <th>Adresse</th>
+                <th>Kjønn</th>
+                <th>Fødseldato</th>
+                <th>Interesser</th>
+                <th>Kursaktiviteter</th>
+                <th>Kontigentstatus</th>
+            </tr>
+
+    <?php 
+
+    // Henter en rad om gangen fra databasen (dvs. ett og ett medlem)
+    while( $row = $resultat->fetch_assoc() ) 
+        { // Opening while
+
+    ?>
+
+<tr>
+            <td><?php echo $row['Fornavn']; ?></td>
+            <td><?php echo $row['Etternavn']; ?></td>
+            <td><?php echo $row['Epost']; ?></td>
+            <td><?php echo $row['Mobilnummer']; ?></td>
+            <td><?php echo $row['Adresse']; ?></td>
+            <td><?php echo $row['Kjønn']; ?></td>
+            <td><?php echo $row['Fødselsdato']; ?></td>
+            <td><?php echo $row['Interesser']; ?></td>
+            <td><?php echo $row['Kursaktiviteter']; ?></td>
+            <td><?php echo $row['Kontigentstatus']; ?></td>
+
+        </tr>
+
+        <?php
+            } // Closing while
+
+            // Avslutter spørring 
+            $stmt->close();
+        ?>
+        </table>
+        
+        <?php 
+            // Avslutter databasetilkobling
+            $conn->close();
+        ?>
+
 </body>
 </html>
