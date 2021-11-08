@@ -68,7 +68,7 @@
 
     ?>
 
-<tr>
+        <tr>
             <td><?php echo $row['Fornavn']; ?></td>
             <td><?php echo $row['Etternavn']; ?></td>
             <td><?php echo $row['Epost']; ?></td>
