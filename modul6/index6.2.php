@@ -42,10 +42,7 @@
 <body>
     <?php
 
-$servernavn = "localhost";
-$brukernavn = "root";
-$passord = "12345678"; //Ja, jeg vet. Ikke verdens beste passord.
-$database = "test1";
+include_once "include/includeDB.php";
 
 //Lager connection til DB:
 $conn = mysqli_connect($servernavn, $brukernavn, $passord, $database);
