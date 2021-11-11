@@ -25,7 +25,7 @@
     echo "Tilkobling vellykket!<br><br>"; //Denne printer jeg for å vite at alt er i orden eller ikke.
     
     //Lager SQL spørringen som jeg skal bruke i $sql variablen.
-    $sql = "SELECT * FROM aktiviteter WHERE dato > '2021-11-11' ORDER BY dato ASC";
+    $sql = "SELECT * FROM aktiviteter WHERE dato > CURRENT_DATE ORDER BY dato ASC";
 
     // Setter sammen spørringen til tilkoblingen
     $stmt = $conn->prepare( $sql );
