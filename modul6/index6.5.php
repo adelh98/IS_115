@@ -12,7 +12,7 @@
 <form method="post" action="#">
   <h3>Hvilken interesse er det du ønsker å se etter?:</h3>
     <label for="Interesse">Interesse:</label><br>
-    <input type="text" id="Interesse" name="Interesse"><br><br>
+    <input type="text" id="Interesse" name="Interesse" required><br><br>
     <input type="submit" name="Søk" value="Søk">
 </form>
     <?php
@@ -44,7 +44,7 @@
         $resultat = $stmt->get_result();
         
         if (mysqli_num_rows($resultat) === 0) {
-            echo "Det finnes ingen medlemmer med $interesse som interesse.<br><br>";
+            echo "Det finnes ingen medlemmer med '<b>$interesse</b>' som interesse.<br><br>";
             exit(); //Avslutter scriptet her hvis det ikke finnes medlemmer med valgt interesse
         } else {
             //Kjør pååå videreee
