@@ -39,15 +39,16 @@
         
         // Utfører spørring
         $stmt->execute();
-        //Sjekker for om spørringen kommer med 0 rader tilbake.
+        
         // Henter resultat
         $resultat = $stmt->get_result();
         
+        //Sjekker for om spørringen kommer med 0 rader tilbake.
         if (mysqli_num_rows($resultat) === 0) {
             echo "Det finnes ingen medlemmer med '<b>$interesse</b>' som interesse.<br><br>";
             exit(); //Avslutter scriptet her hvis det ikke finnes medlemmer med valgt interesse
         } else {
-            //Kjør pååå videreee
+            // Ikke gjør noe
         }
         ?>
 
