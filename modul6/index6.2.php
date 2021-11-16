@@ -15,6 +15,7 @@
   Fornavn: <input type="text" name="navn" placeholder="Fornavn" required><br>   
   Etternavn: <input type="text" name="enavn" placeholder="Etternavn" required><br>
   E-post: <input type="email" name="epost" placeholder="email@hotmail.com" required><br>
+  Passord: <input type="password" name="passord" placeholder="Passord" required><br> 
   Telefon: <input type="tel" name="tlf" placeholder="98156123" required><br>
   Adresse: <input type="text" name="adresse" placeholder="Lolipoppveien 45" required><br>
   <h2>Annen informasjon:</h2>
@@ -44,15 +45,6 @@
 
 include_once "include/includeDB.php";
 
-//Lager connection til DB:
-$conn = mysqli_connect($servernavn, $brukernavn, $passord, $database);
-
-//Sjekker connection:
-if (!$conn) {
-    die("Tilkobling misslykket: " . mysqli_connect_error());
-}
-echo "Tilkobling vellykket!";
-
 if(isset($_REQUEST['registrer'])) {            
     //Lager SQL-Querry:
     //$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
@@ -61,6 +53,7 @@ if(isset($_REQUEST['registrer'])) {
     $fnavn = $_REQUEST['navn'];
     $enavn = $_REQUEST['enavn'];
     $epost = $_REQUEST['epost'];
+    $passord = password_hash($_REQUEST['passord'], PASSWORD_DEFAULT);
     $mobilnummer = $_REQUEST['tlf'];
     $adresse = $_REQUEST['adresse'];
     $kjønn = $_REQUEST['kjønn'];
@@ -69,8 +62,8 @@ if(isset($_REQUEST['registrer'])) {
     $kursaktiviteter = $_REQUEST['kursaktiviteter'];
     $kontigentstatus = $_REQUEST['kontigent'];
     
-    $sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
-            VALUES ('$fnavn', '$enavn', '$epost', '$mobilnummer', '$adresse', '$kjønn', '$fdato', '$interesser', '$kursaktiviteter', '$kontigentstatus')";
+    $sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Passord, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
+            VALUES ('$fnavn', '$enavn', '$epost', '$passord', '$mobilnummer', '$adresse', '$kjønn', '$fdato', '$interesser', '$kursaktiviteter', '$kontigentstatus')";
          
          $query = mysqli_query($conn, $sql);
          
