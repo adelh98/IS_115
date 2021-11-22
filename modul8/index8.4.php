@@ -10,38 +10,47 @@
   <h1>Oppgave 1</h1>
 
   <h3>Trykk linken under for å laste ned PDF-filen:</h3>
-  <form action="<?php echo  $_SERVER['PHP_SELF']; ?>" method="post">
-  <input type="submit" name="lastned "value="Last ned">
+  <form action="index8.4.php" method="get">
+    <input type="hidden" name="act" value="run">
+    <input type="submit" value="Last Ned">
   </form>
 
 <body>
     <?php
+        // Sjekker om knappen "Last Ned" er trykket, hvis ikke så skjer ingenting.
+        if (!empty($_REQUEST['act'])) {
+          lastNed('filer/Test.pdf');
+        }
 
-      $filepath = 'filer/Test.pdf';
-         
-         //Check the file exists or not
-         if(file_exists($filepath)) {
-           
-           //Define header information
-           header('Content-Description: File Transfer');
-           header('Content-Type: application/pdf');
-           header("Cache-Control: no-cache, must-revalidate");
-           header("Expires: 0");
-           header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-           header('Content-Length: ' . filesize($filepath));
-           header('Pragma: public');
-           
-           //Clear system output buffer
-           flush();
-           
-           //Read the size of the file
-           readfile($filepath);
-           
-           //Terminate from the script
-           die();
-          }
+      function lastNed($filepath) {
+        
+        //Check the file exists or not
+        if(file_exists($filepath)) {
           
-    ?>
+          //Define header information
+          header('Content-Description: File Transfer');
+          header('Content-Type: application/octet-stream');
+          header("Cache-Control: no-cache, must-revalidate");
+          header("Expires: 0");
+          header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+          header('Content-Length: ' . filesize($filepath));
+          header('Pragma: public');
+          
+          //Renser (sletter) output bufferet
+          ob_clean();
+          
+          // Fjerner output bufferet fra systemet. 
+          flush();
+          
+          // Leser filstørrelsen
+          readfile($filepath);
+          
+          // Terminerer scriptet.
+          exit();
+        }
+      }
+        
+        ?>
 
 </body>
 </html>
