@@ -39,7 +39,7 @@ if (isset($_REQUEST['upload-send'])) {
         /* Constructing file name */
         $pos = strrpos($_FILES['upload-file']['type'], "/");
         $suffix = substr($_FILES['upload-file']['type'], $pos+1);
-        $filename = $memberID . "." . $suffix; //Lager et filnavn som tilsvarer medlemtet ID.
+        $filename = $memberID . "." . $suffix; //Lager et filnavn som tilsvarer medlemtet ID. FUNKER IKKE HELT
 
         
         /* Errors? */
