@@ -52,11 +52,13 @@ if (isset($_REQUEST['upload-send'])) {
         }
         
         $filepath = $directory . $filename;
+        /*
         $memberID = $id;
         
         if(file_exists("bilder/$id.jpeg")) $filepath = "bilder/$id.jpeg";
         elseif (file_exists("bilder/$id.png")) $filepath = "bilder/$id.png";
         else $filepath = "bilder/default.jpg";
+        */
         
         /* If everything is fine */
         if (count($messages) < 1) {
