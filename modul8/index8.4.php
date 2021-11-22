@@ -24,10 +24,10 @@
 
       function lastNed($filepath) {
         
-        //Check the file exists or not
+        // Sjekker om filen eksisterer
         if(file_exists($filepath)) {
           
-          //Define header information
+          // Definerer "Header" informasjon
           header('Content-Description: File Transfer');
           header('Content-Type: application/octet-stream');
           header("Cache-Control: no-cache, must-revalidate");
