@@ -26,9 +26,10 @@
    } 
    
    // call to function
-   wh_log("Nissetryne");
+   wh_log("Ny hendelse..");
 
-      $data = file("C:/xampp/htdocs/IS_115/modul8/log/log_22-Nov-2021.log",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); //read the entire file to array by ignoring new lines and spaces
+   // Path er ikke relativ til modulen, så stor sannsynlighet for at du må endre på pathen for at dette skal fungere. Gjelder også filnavn.
+      $data = file("C:/xampp/htdocs/IS_115/modul8/log/log_23-Nov-2021.log",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); //read the entire file to array by ignoring new lines and spaces
         echo "<pre/>"; // print output of the above line
       
       print_r(array_slice($data, -10));
