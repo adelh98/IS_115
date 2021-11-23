@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Oppgave 1</title>
+  <title>Oppgave 5</title>
   <meta name="description" content="Oppgave 1">
   <h1>Oppgave 5</h1>
 </head>

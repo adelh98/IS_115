@@ -7,7 +7,7 @@
 
   <title>Oppgave 2</title>
   <meta name="description" content="Oppgave 1">
-  <h1>Oppgave 1</h1>
+  <h1>Oppgave 2</h1>
 </head>
 <body>
     <?php

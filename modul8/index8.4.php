@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Oppgave 1</title>
+  <title>Oppgave 4</title>
   <meta name="description" content="Oppgave 1">
-  <h1>Oppgave 1</h1>
+  <h1>Oppgave 4</h1>
 
   <h3>Trykk linken under for å laste ned PDF-filen:</h3>
   <form action="index8.4.php" method="get">
