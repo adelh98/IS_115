@@ -33,7 +33,7 @@ try {
     $mail->Port       = 587;  
   
     $mail->setFrom('adel.hodz98@gmail.com', 'Adel');           
-    $mail->addAddress('oskar.testad@gmail.com');
+    $mail->addAddress('darkmaninside@hotmail.no');
        
     $mail->isHTML(true);                                  
     $mail->Subject = 'Funker du';
