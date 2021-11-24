@@ -21,24 +21,25 @@
         </form>
     <?php
     if (isset($_POST['submit'])) { 
-    echo "<html><body><table>\n\n";
-    $f = fopen($_FILES['filename']['tmp_name'], "r");
-    while (($line = fgetcsv($f)) !== false) {
-            echo "<tr>";
-            $i = 0;
-            foreach ($line as $cell) {
-                $i++;
-                    if ($i === 20){
-                        break;
-                    } else {
-                        echo "<td>" . htmlspecialchars($cell) . "</td>";
-                    }
+        echo "<html><body><table>\n\n";
+        $f = fopen($_FILES['filename']['tmp_name'], "r");
+        $i = 0;
+        while (($line = fgetcsv($f)) !== false) {
+                echo "<tr>";
+                
+                if ($i >= 20){
+                    break;
+                } else { 
+                foreach ($line as $cell) {          
+                        echo "<td>" . htmlspecialchars($cell) . "</td>";   
                 }
-            echo "</tr>\n";
-    }
-    fclose($f);
-    echo "\n</table></body></html>";
-    }
+            }
+            $i++;
+                echo "</tr>\n";
+        }
+        fclose($f);
+        echo "\n</table></body></html>";
+        }
     ?>
 </pre>
        
