@@ -1,5 +1,7 @@
 <?php
 
+// DENNE OPPGAVEN ER IKKE 100%!!!!
+
 include_once "include/includeDB.php";
 
 /* Form submit? */

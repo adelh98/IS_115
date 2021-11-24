@@ -12,18 +12,18 @@
 <body>
 <form method="post" action="#">
     <?php
-        //Lager variabel med settningen som skal brukes.
+        // Lager variabel med settningen som skal brukes.
         $myString = "Thereses familie skulle ha ris til middag. Hun ville heller ha en is å spise.";
 
-        echo "<h3>$myString</h3>"; //Printer setningen
+        echo "<h3>$myString</h3>"; // Printer setningen
 
-        //Lager variabel for det ordet som skal finnes i settningen $myString.
+        // Lager variabel for det ordet som skal finnes i settningen $myString.
         $word = "is";
 
-        //Kaller funksjonen som teller antall ganger ordet "is" går i settningen.
+        // Kaller funksjonen som teller antall ganger ordet "is" går i settningen.
         $amount = substr_count($myString, $word);
 
-        //Printer fullstendig svar i en settning.
+        // Printer fullstendig svar i en settning.
         echo "Ordet ''<b>$word</b>'' dukker opp <b>$amount</b> ganger i settningen ''<b>$myString</b>''";
     ?>
 </body>

@@ -17,13 +17,13 @@
 </form>
     <?php
 
-    //Include fil med passord:
+    // Include fil med passord:
     include_once "include/includeDB.php";
     
-    //Lager connection til DB:
+    // Lager connection til DB:
     $conn = mysqli_connect($servernavn, $brukernavn, $passord, $database);
 
-    //Sjekker connection:
+    // Sjekker connection:
     if (!$conn) {
         die("Tilkobling misslykket: " . mysqli_connect_error());
     }

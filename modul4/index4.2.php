@@ -42,7 +42,7 @@
 <body>
     <?php
          if(isset($_REQUEST['registrer'])) {            
-            //Data fra bruker input lagres i array $medlemmer
+            // Data fra bruker input lagres i array $medlemmer
             $medlemmer = array(
                 'Fornavn' => $_REQUEST['navn'],
                 'Etternavn' => $_REQUEST['enavn'],
@@ -56,8 +56,8 @@
                 'Kontigentstatus' => $_REQUEST['kontigent']
             );
 
-            //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
-            //Bekreftelsen på registrering til bruker
+            // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
+            // Bekreftelsen på registrering til bruker
             echo "Du er registrert med følgende informasjon:<br>";
             echo "<br>";
             echo "<br><strong>Inormasjon registrert:</strong><br>";

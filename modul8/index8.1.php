@@ -17,7 +17,6 @@
         $kat = "../";
         $peker = opendir($kat);
 
-
             echo "<table border=\"1\">";
             echo "<tr>";
             echo "<th>Filnavn</th>";

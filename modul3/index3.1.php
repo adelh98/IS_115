@@ -19,19 +19,19 @@
     <input type="submit" name="submit" value="Sjekk myndighet">
 </form>
     <?php
-        //Henter variabler fra bruker Input.
+
+        // Henter variabler fra bruker Input.
         if(isset($_REQUEST['submit'])) {
             $Navn = $_REQUEST['Navn'];
             $Alder = $_REQUEST['Alder'];
         
-        //Sjekker om $Alder er STØRRE enn 18, hvis den er det så kjøres første Echo, hvis ikke kjøres andre.
+        // Sjekker om $Alder er STØRRE enn 18, hvis den er det så kjøres første Echo, hvis ikke kjøres andre.
         if($Alder >= 18) {
             echo "<br><h3>$Navn er $Alder år og er dermed myndig!</h3>";
         } else {
             echo "<br><h3>$Navn er $Alder år og er dermed ikke myndig!</h3>";
         }
-        }
-        
+    }
         
     ?>
 </body>

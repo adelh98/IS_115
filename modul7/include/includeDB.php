@@ -7,7 +7,7 @@
    //Lager connection til DB:
    $conn = mysqli_connect($servernavn, $brukernavn, $passord, $database);
 
-   //Sjekker connection:
+   // Sjekker connection:
    if (!$conn) {
        die("Tilkobling misslykket: " . mysqli_connect_error());
    }

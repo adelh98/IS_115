@@ -27,11 +27,11 @@
         //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
         $Etternavn = $_POST['Etternavn'];
 
-        //Lager "logikken" for de ulike svarene:
-        $Etternavn = ucfirst(strtolower($Etternavn));  
         //Her sørger jeg for at første bokstav blir gjort om til stor bokstav, og resten blir små uavhengig av CAPS lock eller ikke.
-
-        $Lengde = strlen($Etternavn); //Her lager jeg en variabel som teller antall bokstaver og så bruker jeg det i echoen til slutt.
+        $Etternavn = ucfirst(strtolower($Etternavn));  
+        
+        //Her lager jeg en variabel som teller antall bokstaver og så bruker jeg det i echoen til slutt.
+        $Lengde = strlen($Etternavn); 
 
         //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell.
         echo "<h3>Output:</h3>";
@@ -45,8 +45,7 @@
                     <td>$Etternavn</td>
                     <td>$Lengde</td>
                 </tr>
-            </table>";
-        
+            </table>"; 
     ?>
 </body>
 </html>

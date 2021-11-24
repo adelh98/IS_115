@@ -56,7 +56,7 @@
             $_SESSION['Etternavn'] = $bruker['Etternavn'];
             $_SESSION['Fornavn'] = $bruker['Fornavn'];
 
-            //Videresender brukeren til innsiden av systemet
+            // Videresender brukeren til innsiden av systemet
             header("Location: passordbeskyttet.php");
             exit();
         } else if ($sjekkPass === FALSE) {

@@ -12,19 +12,19 @@
 <body>
     <?php
 
-    //Include fil med passord:
+    // Include fil med passord:
     include_once "include/includeDB.php";
     
-    //Lager connection til DB:
+    // Lager connection til DB:
     $conn = mysqli_connect($servernavn, $brukernavn, $passord, $database);
 
-    //Sjekker connection:
+    // Sjekker connection:
     if (!$conn) {
         die("Tilkobling misslykket: " . mysqli_connect_error());
     }
     echo "Tilkobling vellykket!<br><br>"; //Denne printer jeg for å vite at alt er i orden eller ikke.
     
-    //Lager SQL spørringen som jeg skal bruke i $sql variablen.
+    // Lager SQL spørringen som jeg skal bruke i $sql variablen.
     $sql = "SELECT * FROM aktiviteter WHERE dato > CURRENT_DATE ORDER BY dato ASC";
 
     // Setter sammen spørringen til tilkoblingen

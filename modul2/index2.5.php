@@ -16,29 +16,30 @@
   <input type="submit" value="Generer passord">
 </form>
     <?php
-    //Lager min egen funksjon som skal være passord generatoren.
+    // Lager min egen funksjon som skal være passord generatoren.
     function passordGenerator($lengde){
             $passord = ''; //Tom string
             $passordSets = ['1234567890', 'ABCDEFGHJKLMNPQRSTUVWXYZ', 'abcdefghjkmnpqrstuvwxyz']; //Lager set for tilgjengelige symboler
 
-    //Henter en tilfeldig symboler fra array listen
-    foreach ($passordSets as $passordSet) { //Lager en foreach løkke som går gjennom hvert element i listen $passordSets
+    // Henter en tilfeldig symboler fra array listen
+    foreach ($passordSets as $passordSet) {                          //Lager en foreach løkke som går gjennom hvert element i listen $passordSets
         $passord .= $passordSet[array_rand(str_split($passordSet))]; //Bruker funksjonen "array_rand" som velger tilfedlige symboler fra listen
-        //Og jeg bruker funksjonen "str_split" som gjør en string til en array.
+                                                                     //Og jeg bruker funksjonen "str_split" som gjør en string til en array.
     }   
     // Sjekker at lengden er riktig
     while (strlen($passord) < $lengde) {
         $randomSet = $passordSets[array_rand($passordSets)];
         $passord .= $randomSet[array_rand(str_split($randomSet))];
     }
+    // Printer passordet.
     echo "<br>\nDitt nye passord er: $passord";
     }
-    //Kaller funksjonen med angitt lengde(8):
+
+    // Kaller funksjonen med angitt lengde(8):
     if (!empty($_GET['act'])) {
         passordGenerator(8);
     }
-    
-        
+         
     ?>
 </body>
 </html>

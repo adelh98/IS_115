@@ -20,7 +20,6 @@
     <input type="number" id="tall2" name="tall2"><br><br>
     <input type="submit" value="Submit">
 </form>
-
     <?php
         //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
         $tall1 = $_POST['tall1'];
@@ -37,8 +36,7 @@
         Summen av $tall1 og $tall2 = $sum. <br> 
         Differansen mellom $tall1 og $tall2 = $diff<br>
         Og gjennomsnittet for $tall1 og $tall2 = $gjenn
-        </h2>";
-        
+        </h2>";     
     ?>
 </body>
 </html>

@@ -88,8 +88,8 @@
 </pre>
 <body>
     <?php 
-        //Her vil den listen som er forhåndsfylt bli endret etter knappen "Endre" er trykket.
-        //Helt undøvendig akkurat nå, men gir en mer elegant og dynamisk løsning.
+        // Her vil den listen som er forhåndsfylt bli endret etter knappen "Endre" er trykket.
+        // Helt undøvendig akkurat nå, men gir en mer elegant og dynamisk løsning.
         if (isset($_REQUEST['endre'])) {
         $medlemmer = array(
             'Fornavn' => $_REQUEST['navn'],
@@ -104,8 +104,8 @@
             'Kontigentstatus' => $_REQUEST['kontigent']
         );
 
-        //Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
-        //Bekreftelsen på endring av informasjon til bruker
+        // Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
+        // Bekreftelsen på endring av informasjon til bruker
         echo "<h3>Ny inormasjon registrert:</h3>";
         foreach ($medlemmer as $field => $value) {
             print_r("<b>$field</b>: $value</b><br>");

@@ -46,9 +46,9 @@
 include_once "include/includeDB.php";
 
 if(isset($_REQUEST['registrer'])) {            
-    //Lager SQL-Querry:
-    //$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
-    //VALUES ('Adel', 'Hodzalari', 'jegerkul@hotmail.com', '98138405', 'Langutigokk 234', 'Mann', '29.07.1998', 'Gaming', 'Maling', 'Betalt')";
+    // Lager SQL-Querry:
+    // $sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
+    // VALUES ('Adel', 'Hodzalari', 'jegerkul@hotmail.com', '98138405', 'Langutigokk 234', 'Mann', '29.07.1998', 'Gaming', 'Maling', 'Betalt')";
     
     $fnavn = $_REQUEST['navn'];
     $enavn = $_REQUEST['enavn'];
@@ -98,8 +98,8 @@ if(isset($_REQUEST['registrer'])) {
                 </tr>    
                 <?php 
 
-//Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
-//Bekreftelsen på registrering til bruker
+// Setter opp en foreach lække som går gjennom hvert element i listen og printer ut med print_r
+// Bekreftelsen på registrering til bruker
 if ($query) {
     echo "Du er registrert med følgende informasjon:<br>";
     echo "<br>";

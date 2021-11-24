@@ -18,15 +18,16 @@
     <input type="submit" value="Finn fylke">
 </form>
     <?php
-        //Henter variabler fra bruker Input.
+        // Henter variabler fra bruker Input.
         $Kommune = $_POST['Kommune'];
 
-        //Bruker 
-        $i = ucfirst(strtolower($Kommune)); //Lager en ny variabel for å sørge for at alle bokstaver blir gjort til små, bortsett fra første, for å samsvare med Switchen
+        // Bruker 
+        $i = ucfirst(strtolower($Kommune)); // Lager en ny variabel for å sørge for at alle bokstaver blir gjort til små, bortsett fra første, for å samsvare med Switchen
 
-        $Kommune = $i; //Re-definerer $Kommune med den nye behandlede Stringen fra $i
+        // Re-definerer $Kommune med den nye behandlede Stringen fra $i
+        $Kommune = $i; 
 
-        //Lager en "Switch" for å sjekke hvilket fylke som skal printes til hvilken kommune:
+        // Lager en "Switch" for å sjekke hvilket fylke som skal printes til hvilken kommune:
             $result = match($Kommune) {
     
                 "Kristiansand", "Lillesand", "Birkenes", "Bjerkreim" => "Agder",

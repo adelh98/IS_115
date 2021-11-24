@@ -11,10 +11,10 @@
 </head>
 <body>
     <?php
-    //Definerer Arrayen
+    // Definerer Arrayen
     $arr = array();
 
-    //Legger bestemte verdier med forhåndsbestemt index::
+    // Legger bestemte verdier med forhåndsbestemt index::
     $arr[0] = "Ole";
     $arr[3] = "Brum";
     $arr[5] = "Gikk";

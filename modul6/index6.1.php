@@ -24,9 +24,9 @@
     }
     echo "Tilkobling vellykket!";
 
-    //Lager SQL-Querry:
-    //$sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
-    //VALUES ('Adel', 'Hodzalari', 'jegerkul@hotmail.com', '98138405', 'Langutigokk 234', 'Mann', '29.07.1998', 'Gaming', 'Maling', 'Betalt')";
+    // Lager SQL-Querry:
+    // $sql = "INSERT INTO medlemmer (Fornavn, Etternavn, Epost, Mobilnummer, Adresse, Kjønn, Fødselsdato, Interesser, Kursaktiviteter, Kontigentstatus) 
+    // VALUES ('Adel', 'Hodzalari', 'jegerkul@hotmail.com', '98138405', 'Langutigokk 234', 'Mann', '29.07.1998', 'Gaming', 'Maling', 'Betalt')";
 
     $sql = "SELECT * FROM medlemmer";
 

@@ -15,42 +15,42 @@
     $string = "Jeg heter Adel";
     echo "Orignale strengen er '<b>$string</b>' \n"; //Printer den originale strenger
     
-    $krypter = encrypt($string); //Kaller på første funksjonen, som krypterer originale strengen
+    $krypter = encrypt($string); // Kaller på første funksjonen, som krypterer originale strengen
     
-    $dekrypter = decrypt($krypter); //La inn kall for dekrpyterings funksjonen for å få den til å kjøre automatisk etter krypteringen.
+    $dekrypter = decrypt($krypter); // La inn kall for dekrpyterings funksjonen for å få den til å kjøre automatisk etter krypteringen.
     
     function encrypt($stringInput) {
       
-      $arr = str_split($stringInput); //Splitter opp strengen, og fører inn hver bokstav i en index i en array.
+      $arr = str_split($stringInput); // Splitter opp strengen, og fører inn hver bokstav i en index i en array.
       
-      $tempArr = []; //Lager tomt array for å føre inn tallene jeg får fra loopen.
+      $tempArr = []; // Lager tomt array for å føre inn tallene jeg får fra loopen.
       
-      //Looper gjennom arrayen, og krypterer hver bokstav og fører inn i et nytt og tomt array.
+      // Looper gjennom arrayen, og krypterer hver bokstav og fører inn i et nytt og tomt array.
       foreach ($arr as $char) {
-        $kryptert = ord($char); //ord() krypterer til ASCII
+        $kryptert = ord($char); // ord() krypterer til ASCII
         $tempArr[] = (string)$kryptert; //Fører tallene inn i det tomme arrayet, og caster til "string" for å få riktig datatype
       }
       
-      $kryptertString = implode("", $tempArr); //Setter sammen arrayet om til en string
+      $kryptertString = implode("", $tempArr); // Setter sammen arrayet om til en string
       
-      echo "<br>Den krypterte strengen er: <b>'$kryptertString'</b>"; //Printer den krypterte stringen
+      echo "<br>Den krypterte strengen er: <b>'$kryptertString'</b>"; // Printer den krypterte stringen
 
       return $tempArr;
       
     }
     
     
-    //Denne funksjonene tar inn det nye arrayet fra den encrypt() og dekrypterer.
+    // Denne funksjonene tar inn det nye arrayet fra den encrypt() og dekrypterer.
     function decrypt($input) {
-      $tempArr = []; //Lager nok et nytt array for å føre inn alle bokstavene igjen etter de-kryptering
+      $tempArr = []; // Lager nok et nytt array for å føre inn alle bokstavene igjen etter de-kryptering
       
-      //Looper gjennom arrayet, og dekrypterer og fører inn i nytt array.
+      // Looper gjennom arrayet, og dekrypterer og fører inn i nytt array.
       foreach ($input as $char) {
-        $dekrypt = chr($char); //chr() de-krypterer og gjør om fra ASCII til tekst
+        $dekrypt = chr($char); // chr() de-krypterer og gjør om fra ASCII til tekst
         $tempArr[] = (string)$dekrypt;
       }
       
-      $dekrypterString = implode("", $tempArr); //Setter sammen til en String igjen
+      $dekrypterString = implode("", $tempArr); // Setter sammen til en String igjen
       
       echo "<br>Den de-krypterte strenger er: <b>'$dekrypterString'</b>";
     }

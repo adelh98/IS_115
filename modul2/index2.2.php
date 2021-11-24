@@ -24,14 +24,15 @@
     <input type="submit" value="Legg Til">
 </form>
     <?php
-        //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
+        // Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
         $Etternavn = $_POST['Etternavn'];
+        
+        // Her stripper jeg for mulig HTML syntax og legger det inn i ny variabel.
+        $Stripped = strip_tags($Etternavn); 
 
-        $Stripped = strip_tags($Etternavn); //Her stripper jeg for mulig HTML syntax og legger det inn i ny variabel.
-
+        // Bruker $Stripped variabel for så å re-definere $Etternavn med den nye versjonen.
         $Etternavn = ucfirst(strtolower($Stripped));
-        //Bruker $Stripped variabel for så å re-definere $Etternavn med den nye versjonen.
-
+        
         //Printer ut resultatene i en setning ved hjelp av "Echo" i en oversiktlig tabell.
         echo "<h3>Output:</h3>";
         echo 
@@ -42,8 +43,7 @@
                 <tr>
                     <td>$Etternavn</t>
                 </tr>
-            </table>";
-        
+            </table>"; 
     ?>
 </body>
 </html>

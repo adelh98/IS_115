@@ -1,5 +1,6 @@
 <?php
 
+// IKKE 100%!!!
 include_once "include/includeDB.php";
 
 $sql = "SELECT * FROM sitater";

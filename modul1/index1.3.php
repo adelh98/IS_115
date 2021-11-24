@@ -26,7 +26,6 @@
             $Navn2 = "Adrian";
             $Alder2 = 20;
 
-
         //Her printer jeg i tabell.
         echo "<h3>Vanlig tabell:</h3>";    
         echo 

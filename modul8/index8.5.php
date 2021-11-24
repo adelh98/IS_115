@@ -49,9 +49,9 @@
       $pdf->SetFont('Arial');
       $pdf->SetFontSize(10);
       $pdf->SetTextColor(0,0,0);
-      $pdf->SetXY(43, 107); //Her plassering for navn ved siden av "kjære"
+      $pdf->SetXY(43, 107); // Her plassering for navn ved siden av "kjære"
       $pdf->Write(0, "$medlem");
-      $pdf->SetXY(178, 30); //Her er plassering for by oppe i høyre
+      $pdf->SetXY(178, 30); // Her er plassering for by oppe i høyre
       $pdf->Write(0, $town);
       $pdf->SetXY(180, 35); //Her er plassering for date oppe i høyre
       $pdf->Write(0, $date);
