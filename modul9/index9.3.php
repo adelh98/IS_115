@@ -35,7 +35,9 @@
   }
 </style>
 <?php
+    // Henter API:
   $api_url = "https://v2.jokeapi.dev/joke/Any";
+   // Decoder til JSON samtidig og henter innhold fra hva enn URL'en returnerer. Dette blir lagret i $joke
   $joke = json_decode(file_get_contents($api_url));
 ?>
 <div class="box-container">

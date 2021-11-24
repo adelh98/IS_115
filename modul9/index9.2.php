@@ -23,10 +23,10 @@ require_once "vendor/phpmailer/phpmailer/src/SMTP.php";
   
 $mail = new PHPMailer(true);
 
-$fnavn = "Adel";
-$enavn = "Hodzalari"; 
-$kode = "abc"; 
-$epost = "adel.hodz98@gmail.com"; 
+$fnavn = "navn";
+$enavn = "Etternavn"; 
+$kode = "abc"; // Spiller ingen rolle.
+$epost = "mottaker@eksempel.com"; //Din epost.
 
 
   
@@ -35,13 +35,13 @@ try {
     $mail->isSMTP();                                            
     $mail->Host       = 'smtp.gmail.com;';                    
     $mail->SMTPAuth   = true;                             
-    $mail->Username   = 'adel.hodz98@gmail.com';                 
-    $mail->Password   = 'Genser234';                        
+    $mail->Username   = 'sender@eksempel.com'; //Din epost                 
+    $mail->Password   = ''; // Ditt passord           
     $mail->SMTPSecure = 'tls';                              
     $mail->Port       = 587;  
   
-    $mail->setFrom('adel.hodz98@gmail.com', 'Adel');           
-    $mail->addAddress('darkmaninside@hotmail.no');
+    $mail->setFrom('sender@eksempel.com', 'navn');           
+    $mail->addAddress('mottaker@eksempel.com');
 
     $mail->addEmbeddedImage('bilder/unique-fox-logo-simple-memorable-260nw-764798020.webp', 'logo');
 

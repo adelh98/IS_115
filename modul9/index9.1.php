@@ -27,22 +27,22 @@ try {
     $mail->isSMTP();                                            
     $mail->Host       = 'smtp.gmail.com;';                    
     $mail->SMTPAuth   = true;                             
-    $mail->Username   = 'adel.hodz98@gmail.com';                 
-    $mail->Password   = 'Genser234';                        
+    $mail->Username   = 'sender@eksempel.com'; //Legg til din epost adresse her             
+    $mail->Password   = ''; //Legg til ditt passord her                        
     $mail->SMTPSecure = 'tls';                              
     $mail->Port       = 587;  
   
-    $mail->setFrom('adel.hodz98@gmail.com', 'Adel');           
-    $mail->addAddress('darkmaninside@hotmail.no');
+    $mail->setFrom('sender@eksempel.com', 'navn');           
+    $mail->addAddress('mottaker@eksempel.com');
        
     $mail->isHTML(true);                                  
     $mail->Subject = 'Funker du';
     $mail->Body    = 'Får du mailen min <b>Testa?</b>??? ';
-    $mail->AltBody = 'ÅLøøøøøøøøøøøøøøøøøøøø';
+    $mail->AltBody = 'Funkgerer du?';
     $mail->send();
-    echo "Mail has been sent successfully!";
+    echo "Epost har blitt sendt!";
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Eposten kunne ikke sendes på grunn av: {$mail->ErrorInfo}";
 }
   
 ?>

@@ -20,14 +20,17 @@
 
         </form>
     <?php
-    if (isset($_POST['submit'])) { 
-        echo "<html><body><table>\n\n";
+    if (isset($_POST['submit'])) { // Sjekker om "Submit" er trykket. Hvis ikke så skjer ingenting.
+        echo "<html><body><table>\n\n"; //Første del av HTML tabell.
+        // Åpner filen
         $f = fopen($_FILES['filename']['tmp_name'], "r");
+        // Initialsierer teller for å bruke i IF løkke senere.
         $i = 0;
+        // Lager en while slik at programmet henter så lenge det er rows i DB.
         while (($line = fgetcsv($f)) !== false) {
                 echo "<tr>";
                 
-                if ($i >= 20){
+                if ($i >= 20){ // Sjekker om $i er større eller lik 20. Hvis ja, stopp. 
                     break;
                 } else { 
                 foreach ($line as $cell) {          

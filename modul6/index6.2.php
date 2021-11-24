@@ -53,7 +53,7 @@ if(isset($_REQUEST['registrer'])) {
     $fnavn = $_REQUEST['navn'];
     $enavn = $_REQUEST['enavn'];
     $epost = $_REQUEST['epost'];
-    $passord = password_hash($_REQUEST['passord'], PASSWORD_DEFAULT);
+    $passord = password_hash($_REQUEST['passord'], PASSWORD_DEFAULT); //Hasher passordet før det sendes til DB
     $mobilnummer = $_REQUEST['tlf'];
     $adresse = $_REQUEST['adresse'];
     $kjønn = $_REQUEST['kjønn'];
