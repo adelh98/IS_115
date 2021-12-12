@@ -18,25 +18,30 @@
     <input type="number" id="tall1" name="tall1"><br>
     <label for="tall2">Tall 2:</label><br>
     <input type="number" id="tall2" name="tall2"><br><br>
-    <input type="submit" value="Submit">
+
+    <input type="submit" name="kjør" value="Submit">
 </form>
     <?php
-        //Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
-        $tall1 = $_POST['tall1'];
-        $tall2 = $_POST['tall2'];
-
-        //Lager "logikken" for de ulike svarene:
-        $sum = $tall1 + $tall2; //Legger sammen tallene
-        $diff = abs($tall1 - $tall2); //Subtraherer tallene og tar hensyn til potensielle negative verdier ved hjelp av abs() funksjon.
-        $gjenn = $tall1 + $tall2 / 2; //Regner ut gjennomsnitt
-
-        //Printer ut resultatene i en setning ved hjelp av "Echo" og litt HTML "pynt":
-        echo 
-        "<h2>
-        Summen av $tall1 og $tall2 = $sum. <br> 
-        Differansen mellom $tall1 og $tall2 = $diff<br>
-        Og gjennomsnittet for $tall1 og $tall2 = $gjenn
-        </h2>";     
+        
+        if (isset($_REQUEST['kjør'])) {
+          
+          // Lager dynamiske variabler. Disse blir tatt inn fra bruker og lagret i variabelen og senere brukt i logikken.
+          $tall1 = $_POST['tall1'];
+          $tall2 = $_POST['tall2'];
+          
+          // Lager "logikken" for de ulike svarene:
+            $sum = $tall1 + $tall2; //Legger sammen tallene
+            $diff = abs($tall1 - $tall2); //Subtraherer tallene og tar hensyn til potensielle negative verdier ved hjelp av abs() funksjon.
+            $gjenn = $tall1 + $tall2 / 2; //Regner ut gjennomsnitt
+            
+            //Printer ut resultatene i en setning ved hjelp av "Echo" og litt HTML "pynt":
+            echo 
+            "<h2>
+            Summen av $tall1 og $tall2 = $sum. <br> 
+            Differansen mellom $tall1 og $tall2 = $diff<br>
+            Og gjennomsnittet for $tall1 og $tall2 = $gjenn
+            </h2>";     
+          }
     ?>
 </body>
 </html>
